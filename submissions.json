@@ -895,6 +895,21 @@
     ],
     "timestamp": "Jan/08/2021 23:01"
   },
+  "CF39252935": {
+    "contest_id": 124,
+    "language": "GNU C",
+    "path": "codeforces/124/A.c",
+    "problem_index": "A",
+    "problem_name": "The number of positions",
+    "problem_url": "https://codeforces.com/contest/124/problem/A",
+    "submission_id": "CF39252935",
+    "submission_url": "https://codeforces.com/contest/124/submission/39252935",
+    "tags": [
+      "math",
+      "*1000"
+    ],
+    "timestamp": "Jun/15/2018 02:21"
+  },
   "CF39252952": {
     "contest_id": 96,
     "language": "GNU C",
