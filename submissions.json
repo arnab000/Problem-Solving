@@ -895,6 +895,21 @@
     ],
     "timestamp": "Jan/08/2021 23:01"
   },
+  "CF39252899": {
+    "contest_id": 337,
+    "language": "GNU C",
+    "path": "codeforces/337/A.c",
+    "problem_index": "A",
+    "problem_name": "Puzzles",
+    "problem_url": "https://codeforces.com/contest/337/problem/A",
+    "submission_id": "CF39252899",
+    "submission_url": "https://codeforces.com/contest/337/submission/39252899",
+    "tags": [
+      "greedy",
+      "*900"
+    ],
+    "timestamp": "Jun/15/2018 02:17"
+  },
   "CF39252935": {
     "contest_id": 124,
     "language": "GNU C",
