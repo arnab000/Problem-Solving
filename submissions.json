@@ -895,6 +895,22 @@
     ],
     "timestamp": "Jan/08/2021 23:01"
   },
+  "CF39252963": {
+    "contest_id": 221,
+    "language": "GNU C",
+    "path": "codeforces/221/A.c",
+    "problem_index": "A",
+    "problem_name": "Little Elephant and Function",
+    "problem_url": "https://codeforces.com/contest/221/problem/A",
+    "submission_id": "CF39252963",
+    "submission_url": "https://codeforces.com/contest/221/submission/39252963",
+    "tags": [
+      "implementation",
+      "math",
+      "*1000"
+    ],
+    "timestamp": "Jun/15/2018 02:23"
+  },
   "CF39252998": {
     "contest_id": 459,
     "language": "GNU C",
