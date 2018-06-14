@@ -895,6 +895,22 @@
     ],
     "timestamp": "Jan/08/2021 23:01"
   },
+  "CF39253033": {
+    "contest_id": 222,
+    "language": "GNU C",
+    "path": "codeforces/222/A.c",
+    "problem_index": "A",
+    "problem_name": "Shooshuns and Sequence ",
+    "problem_url": "https://codeforces.com/contest/222/problem/A",
+    "submission_id": "CF39253033",
+    "submission_url": "https://codeforces.com/contest/222/submission/39253033",
+    "tags": [
+      "brute force",
+      "implementation",
+      "*1200"
+    ],
+    "timestamp": "Jun/15/2018 02:28"
+  },
   "CF39253061": {
     "contest_id": 327,
     "language": "GNU C",
