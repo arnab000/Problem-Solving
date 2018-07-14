@@ -895,6 +895,23 @@
     ],
     "timestamp": "Jan/08/2021 23:01"
   },
+  "CF40359371": {
+    "contest_id": 158,
+    "language": "GNU C",
+    "path": "codeforces/158/B.c",
+    "problem_index": "B",
+    "problem_name": "Taxi",
+    "problem_url": "https://codeforces.com/contest/158/problem/B",
+    "submission_id": "CF40359371",
+    "submission_url": "https://codeforces.com/contest/158/submission/40359371",
+    "tags": [
+      "*special problem",
+      "greedy",
+      "implementation",
+      "*1100"
+    ],
+    "timestamp": "Jul/15/2018 04:54"
+  },
   "CF40360478": {
     "contest_id": 50,
     "language": "GNU C",
