@@ -895,6 +895,21 @@
     ],
     "timestamp": "Jan/08/2021 23:01"
   },
+  "CF40380264": {
+    "contest_id": 922,
+    "language": "GNU C",
+    "path": "codeforces/922/A.c",
+    "problem_index": "A",
+    "problem_name": "Cloning Toys",
+    "problem_url": "https://codeforces.com/contest/922/problem/A",
+    "submission_id": "CF40380264",
+    "submission_url": "https://codeforces.com/contest/922/submission/40380264",
+    "tags": [
+      "implementation",
+      "*1300"
+    ],
+    "timestamp": "Jul/15/2018 19:38"
+  },
   "CF40381743": {
     "contest_id": 59,
     "language": "GNU C",
