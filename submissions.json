@@ -895,6 +895,22 @@
     ],
     "timestamp": "Jan/08/2021 23:01"
   },
+  "CF40378669": {
+    "contest_id": 902,
+    "language": "GNU C",
+    "path": "codeforces/902/A.c",
+    "problem_index": "A",
+    "problem_name": "Visiting a Friend",
+    "problem_url": "https://codeforces.com/contest/902/problem/A",
+    "submission_id": "CF40378669",
+    "submission_url": "https://codeforces.com/contest/902/submission/40378669",
+    "tags": [
+      "greedy",
+      "implementation",
+      "*1100"
+    ],
+    "timestamp": "Jul/15/2018 18:38"
+  },
   "CF40380264": {
     "contest_id": 922,
     "language": "GNU C",
