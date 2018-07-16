@@ -895,6 +895,21 @@
     ],
     "timestamp": "Jan/08/2021 23:01"
   },
+  "CF40425911": {
+    "contest_id": 1006,
+    "language": "GNU C",
+    "path": "codeforces/1006/A.c",
+    "problem_index": "A",
+    "problem_name": "Adjacent Replacements",
+    "problem_url": "https://codeforces.com/contest/1006/problem/A",
+    "submission_id": "CF40425911",
+    "submission_url": "https://codeforces.com/contest/1006/submission/40425911",
+    "tags": [
+      "implementation",
+      "*800"
+    ],
+    "timestamp": "Jul/16/2018 21:11"
+  },
   "CF40493644": {
     "contest_id": 339,
     "language": "GNU C",
