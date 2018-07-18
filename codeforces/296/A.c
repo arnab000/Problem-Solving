@@ -45,7 +45,8 @@ while(1){x=0;
         if(n%2==0)
             baal=n;
         else baal=n-1;
-        if(dis>=(baal/2)|| n==0)
+        if(dis>=(n/2)|| n==0)
             printf("YES");
         else printf("NO");
     }
+
