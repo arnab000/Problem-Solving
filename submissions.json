@@ -895,6 +895,21 @@
     ],
     "timestamp": "Jan/08/2021 23:01"
   },
+  "CF41361742": {
+    "contest_id": 1017,
+    "language": "GNU C++14",
+    "path": "codeforces/1017/A.cpp",
+    "problem_index": "A",
+    "problem_name": "The Rank",
+    "problem_url": "https://codeforces.com/contest/1017/problem/A",
+    "submission_id": "CF41361742",
+    "submission_url": "https://codeforces.com/contest/1017/submission/41361742",
+    "tags": [
+      "implementation",
+      "*800"
+    ],
+    "timestamp": "Aug/08/2018 21:39"
+  },
   "CF41372170": {
     "contest_id": 1017,
     "language": "GNU C++14",
