@@ -895,6 +895,22 @@
     ],
     "timestamp": "Jan/08/2021 23:01"
   },
+  "CF41523821": {
+    "contest_id": 578,
+    "language": "GNU C++14",
+    "path": "codeforces/578/B.cpp",
+    "problem_index": "B",
+    "problem_name": "\"Or\" Game",
+    "problem_url": "https://codeforces.com/contest/578/problem/B",
+    "submission_id": "CF41523821",
+    "submission_url": "https://codeforces.com/contest/578/submission/41523821",
+    "tags": [
+      "brute force",
+      "greedy",
+      "*1700"
+    ],
+    "timestamp": "Aug/12/2018 16:42"
+  },
   "CF41541175": {
     "contest_id": 546,
     "language": "GNU C++14",
