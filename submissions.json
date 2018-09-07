@@ -895,6 +895,21 @@
     ],
     "timestamp": "Jan/08/2021 23:01"
   },
+  "CF42656873": {
+    "contest_id": 1036,
+    "language": "GNU C++14",
+    "path": "codeforces/1036/B.cpp",
+    "problem_index": "B",
+    "problem_name": "Diagonal Walking v.2",
+    "problem_url": "https://codeforces.com/contest/1036/problem/B",
+    "submission_id": "CF42656873",
+    "submission_url": "https://codeforces.com/contest/1036/submission/42656873",
+    "tags": [
+      "math",
+      "*1600"
+    ],
+    "timestamp": "Sep/08/2018 05:26"
+  },
   "CF43350169": {
     "contest_id": 785,
     "language": "GNU C++14",
