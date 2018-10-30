@@ -895,6 +895,21 @@
     ],
     "timestamp": "Jan/08/2021 23:01"
   },
+  "CF45084772": {
+    "contest_id": 899,
+    "language": "GNU C++17",
+    "path": "codeforces/899/B.cpp",
+    "problem_index": "B",
+    "problem_name": "Months and Years",
+    "problem_url": "https://codeforces.com/contest/899/problem/B",
+    "submission_id": "CF45084772",
+    "submission_url": "https://codeforces.com/contest/899/submission/45084772",
+    "tags": [
+      "implementation",
+      "*1200"
+    ],
+    "timestamp": "Oct/30/2018 12:33"
+  },
   "CF45117137": {
     "contest_id": 598,
     "language": "GNU C++17",
