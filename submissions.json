@@ -895,6 +895,23 @@
     ],
     "timestamp": "Jan/08/2021 23:01"
   },
+  "CF50113679": {
+    "contest_id": 1117,
+    "language": "GNU C++17",
+    "path": "codeforces/1117/B.cpp",
+    "problem_index": "B",
+    "problem_name": "Emotes",
+    "problem_url": "https://codeforces.com/contest/1117/problem/B",
+    "submission_id": "CF50113679",
+    "submission_url": "https://codeforces.com/contest/1117/submission/50113679",
+    "tags": [
+      "greedy",
+      "math",
+      "sortings",
+      "*1000"
+    ],
+    "timestamp": "Feb/18/2019 22:08"
+  },
   "CF50143061": {
     "contest_id": 630,
     "language": "GNU C++17",
