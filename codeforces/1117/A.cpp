@@ -3,34 +3,32 @@ using namespace std;
 
 int main()
 {
-    int i,j,n,k,max1=-1,max2=-1,l;
-    vector<int>v;
+    int n,i,l=0;
     cin>>n;
+    long long a[n],max=0;
+    vector<int>v;
     for(i=0;i<n;i++)
     {
-        cin>>k;
-        v.push_back(k);
-        if(max1<=v[i])
-          max1=v[i];
+        cin>>a[i];
+        if(a[i]>max)
+            max=a[i];
     }
-     for(i=0;i<=n-1;i++)
+    for(i=0;i<n;)
     {
-        l=1;
-       while(v[i]==max1 && v[i]==v[i+1])
-       {
-           l++;
-           i++;
-           if(i==n-1)
-           break;
-
-       }
-       if(max2<=l)
-        max2=l;
-
+        l=0;
+        if(a[i]==max)
+        {
+            while(a[i]==max && i<n)
+            {
+                l++;
+                i++;
+            }
+            v.push_back(l);
+        }
+        else
+            i++;
     }
-    cout<<max2<<endl;
-
-
-
-
+    int s=v.size();
+    sort(v.begin(),v.end());
+    cout<<v[s-1]<<endl;
 }
