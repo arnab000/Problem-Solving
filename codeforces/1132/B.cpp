@@ -14,17 +14,17 @@ int main()
 
         sum+=x;
     }
-    
+
     cin>>b;
     sort(sura.begin(),sura.end(),greater <int>());
 
     for(long long i=0;i<b;i++)
     {
-        long long k;
-        k=sum;
-        cin>>x;
-        k=k-sura[x-1];
-        cout<<k<<endl;
+        int t;
+       cin>>t;
+
+
+        cout<<sum-sura[t-1]<<endl;
     }
 
 }
