@@ -895,6 +895,21 @@
     ],
     "timestamp": "Jan/08/2021 23:01"
   },
+  "CF52261532": {
+    "contest_id": 1046,
+    "language": "GNU C++17",
+    "path": "codeforces/1046/F.cpp",
+    "problem_index": "F",
+    "problem_name": "Splitting money",
+    "problem_url": "https://codeforces.com/contest/1046/problem/F",
+    "submission_id": "CF52261532",
+    "submission_url": "https://codeforces.com/contest/1046/submission/52261532",
+    "tags": [
+      "implementation",
+      "*1400"
+    ],
+    "timestamp": "Apr/03/2019 15:05"
+  },
   "CF52547515": {
     "contest_id": 1102,
     "language": "GNU C++11",
