@@ -895,6 +895,22 @@
     ],
     "timestamp": "Jan/08/2021 23:01"
   },
+  "CF52973690": {
+    "contest_id": 1151,
+    "language": "GNU C++11",
+    "path": "codeforces/1151/A.cpp",
+    "problem_index": "A",
+    "problem_name": "Maxim and Biology",
+    "problem_url": "https://codeforces.com/contest/1151/problem/A",
+    "submission_id": "CF52973690",
+    "submission_url": "https://codeforces.com/contest/1151/submission/52973690",
+    "tags": [
+      "brute force",
+      "strings",
+      "*1000"
+    ],
+    "timestamp": "Apr/18/2019 22:34"
+  },
   "CF53059486": {
     "contest_id": 1146,
     "language": "GNU C++11",
