@@ -1,9 +1,18 @@
 #include<bits/stdc++.h>
 using namespace std;
+int f(int n){
+    int i=1,x=0;
+    while(n>0){
+        if(!(n&1)) x=i;
+        i++;
+        n>>=1;
+    }
+    return x;
+}
 
 int main(){
 
-    int n,m=0,i,l=0,k=0;
+    int n,i,l=0,k=0,m=0;
     cin>>n;
     vector<int>v;
     int p=n,sura=0,x=0;
@@ -19,33 +28,24 @@ int main(){
 
         }
     while(1){
-        
-        i=n;
-        l=0;
-        while(i>0){
-            
+        vector<int >v1;
+       // cout<<n<<endl;
+        k=f(n);
 
-            if(i%2==0)
-                k=l;
-            i/=2;
-            l++;
 
-        }
-       // cout<<k+1<<endl;
-
-        v.push_back(k+1);
+        v.push_back(k);
 
         int s=1;
-        for(i=1;i<=k+1;i++){
+        for(i=1;i<=k;i++){
             s*=2;
         }
 
         s--;
-        // cout<<s<<endl;
+         //cout<<s<<endl;
         n=n^s;
-        m++;
-        //cout<<n<<endl;
-         p=n,sura=0,x=0;
+       // cout<<n<<endl;
+       m++;
+       p=n,sura=0,x=0;
          while(p>0){
         if(!(p&1)) x=sura+1;
         p>>=1;
@@ -53,14 +53,15 @@ int main(){
     }
     if(x==0)
         break;
+
         n++;
-        m++;
         p=n,sura=0,x=0;
          while(p>0){
         if(!(p&1)) x=sura+1;
         p>>=1;
         sura++;
     }
+    m++;
     if(x==0)
         break;
 
