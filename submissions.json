@@ -895,6 +895,22 @@
     ],
     "timestamp": "Jan/08/2021 23:01"
   },
+  "CF53604992": {
+    "contest_id": 1150,
+    "language": "GNU C++11",
+    "path": "codeforces/1150/A.cpp",
+    "problem_index": "A",
+    "problem_name": "Stock Arbitraging",
+    "problem_url": "https://codeforces.com/contest/1150/problem/A",
+    "submission_id": "CF53604992",
+    "submission_url": "https://codeforces.com/contest/1150/submission/53604992",
+    "tags": [
+      "greedy",
+      "implementation",
+      "*800"
+    ],
+    "timestamp": "May/01/2019 15:53"
+  },
   "CF53605012": {
     "contest_id": 1150,
     "language": "GNU C++11",
