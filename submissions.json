@@ -895,6 +895,22 @@
     ],
     "timestamp": "Jan/08/2021 23:01"
   },
+  "CF53913005": {
+    "contest_id": 1163,
+    "language": "GNU C++11",
+    "path": "codeforces/1163/A.cpp",
+    "problem_index": "A",
+    "problem_name": "Eating Soup",
+    "problem_url": "https://codeforces.com/contest/1163/problem/A",
+    "submission_id": "CF53913005",
+    "submission_url": "https://codeforces.com/contest/1163/submission/53913005",
+    "tags": [
+      "greedy",
+      "math",
+      "*900"
+    ],
+    "timestamp": "May/09/2019 21:21"
+  },
   "CF54112661": {
     "contest_id": 1165,
     "language": "GNU C++11",
