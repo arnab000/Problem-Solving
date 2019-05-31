@@ -895,6 +895,23 @@
     ],
     "timestamp": "Jan/08/2021 23:01"
   },
+  "CF54890699": {
+    "contest_id": 784,
+    "language": "GNU C++11",
+    "path": "codeforces/784/E.cpp",
+    "problem_index": "E",
+    "problem_name": "Twisted Circuit",
+    "problem_url": "https://codeforces.com/contest/784/problem/E",
+    "submission_id": "CF54890699",
+    "submission_url": "https://codeforces.com/contest/784/submission/54890699",
+    "tags": [
+      "*special problem",
+      "brute force",
+      "implementation",
+      "*2000"
+    ],
+    "timestamp": "Jun/01/2019 02:07"
+  },
   "CF54894150": {
     "contest_id": 1029,
     "language": "GNU C++11",
