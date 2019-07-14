@@ -895,6 +895,21 @@
     ],
     "timestamp": "Jan/08/2021 23:01"
   },
+  "CF57057851": {
+    "contest_id": 1194,
+    "language": "GNU C++11",
+    "path": "codeforces/1194/A.cpp",
+    "problem_index": "A",
+    "problem_name": "Remove a Progression",
+    "problem_url": "https://codeforces.com/contest/1194/problem/A",
+    "submission_id": "CF57057851",
+    "submission_url": "https://codeforces.com/contest/1194/submission/57057851",
+    "tags": [
+      "math",
+      "*800"
+    ],
+    "timestamp": "Jul/14/2019 22:51"
+  },
   "CF57060517": {
     "contest_id": 1194,
     "language": "GNU C++17",
