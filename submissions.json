@@ -895,6 +895,22 @@
     ],
     "timestamp": "Jan/08/2021 23:01"
   },
+  "CF58843276": {
+    "contest_id": 1203,
+    "language": "GNU C++17",
+    "path": "codeforces/1203/E.cpp",
+    "problem_index": "E",
+    "problem_name": "Boxers",
+    "problem_url": "https://codeforces.com/contest/1203/problem/E",
+    "submission_id": "CF58843276",
+    "submission_url": "https://codeforces.com/contest/1203/submission/58843276",
+    "tags": [
+      "greedy",
+      "sortings",
+      "*1500"
+    ],
+    "timestamp": "Aug/15/2019 09:24"
+  },
   "CF58844384": {
     "contest_id": 1203,
     "language": "GNU C++17",
