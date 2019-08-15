@@ -2,7 +2,7 @@
 using namespace std;
 int main()
 {
- 
+
     long long n,k,l;
     vector<long long>sura;
     cin>>n>>k;
@@ -26,23 +26,23 @@ int main()
         long long pre_y=y;
         y=y+(p*t);
         t++;
- 
- 
+
+
      if(y>k)
      {
- 
+
          t--;
          ans-=p;
          long long o=k-pre_y;
          ans+=o/t;
          cout<<ans<<endl;
          return 0;
- 
- 
- 
- 
- 
- 
+
+
+
+
+
+
      }
     // cout<<k<<" "<<y<<" "<<ans<<endl;
       if(y==k)
@@ -50,13 +50,13 @@ int main()
          cout<<ans<<endl;
          return 0;
      }
- 
+
     }
     //cout<<ans<<endl;
      long long o=k-y;
          ans+=o/t;
          cout<<ans<<endl;
         // return 0;
- 
- 
+
+
 }
