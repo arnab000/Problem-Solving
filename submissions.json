@@ -895,6 +895,22 @@
     ],
     "timestamp": "Jan/08/2021 23:01"
   },
+  "CF61183199": {
+    "contest_id": 1230,
+    "language": "GNU C++11",
+    "path": "codeforces/1230/C.cpp",
+    "problem_index": "C",
+    "problem_name": "Anadi and Domino",
+    "problem_url": "https://codeforces.com/contest/1230/problem/C",
+    "submission_id": "CF61183199",
+    "submission_url": "https://codeforces.com/contest/1230/submission/61183199",
+    "tags": [
+      "brute force",
+      "graphs",
+      "*1700"
+    ],
+    "timestamp": "Sep/24/2019 02:44"
+  },
   "CF61479521": {
     "contest_id": 1228,
     "language": "GNU C++11",
