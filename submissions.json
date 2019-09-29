@@ -895,6 +895,22 @@
     ],
     "timestamp": "Jan/08/2021 23:01"
   },
+  "CF61494341": {
+    "contest_id": 1228,
+    "language": "GNU C++11",
+    "path": "codeforces/1228/B.cpp",
+    "problem_index": "B",
+    "problem_name": "Filling the Grid",
+    "problem_url": "https://codeforces.com/contest/1228/problem/B",
+    "submission_id": "CF61494341",
+    "submission_url": "https://codeforces.com/contest/1228/submission/61494341",
+    "tags": [
+      "implementation",
+      "math",
+      "*1400"
+    ],
+    "timestamp": "Sep/29/2019 20:07"
+  },
   "CF61637602": {
     "contest_id": 1234,
     "language": "GNU C++11",
