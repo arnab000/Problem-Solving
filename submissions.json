@@ -895,6 +895,21 @@
     ],
     "timestamp": "Jan/08/2021 23:01"
   },
+  "CF64219939": {
+    "contest_id": 1256,
+    "language": "GNU C++14",
+    "path": "codeforces/1256/A.cpp",
+    "problem_index": "A",
+    "problem_name": "Payment Without Change",
+    "problem_url": "https://codeforces.com/contest/1256/problem/A",
+    "submission_id": "CF64219939",
+    "submission_url": "https://codeforces.com/contest/1256/submission/64219939",
+    "tags": [
+      "math",
+      "*1000"
+    ],
+    "timestamp": "Nov/04/2019 19:35"
+  },
   "CF64381900": {
     "contest_id": 1243,
     "language": "GNU C++14",
