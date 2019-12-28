@@ -1,71 +1,84 @@
-#include <bits/stdc++.h>
-#define li long int
-#define lli long long int
+//#include<bits/stdc++.h>
+#include<set>
+#include<map>
+#include<stack>
+#include<cmath>
+#include<queue>
+#include<cstdio>
+#include<string>
+#include<vector>
+#include<cstring>
+#include<iostream>
+#include<algorithm>
+#include<unordered_map>
 using namespace std;
-#define pb push_back
-#define ppb pop_back
-#define fi first
-#define se second
-#define rep(i, l, r) for(i=l; i<=r; i++)
-#define repr(i, r, l) for(i=r; i>=l; i--)
-typedef pair<int, int> pr;
- 
-class myComp {
-    public:
-        bool operator() (pr &p1, pr &p2) {
-            return p2.se > p1.se;
-        }
-};
- 
-void solve() 
-{
-    int n;
-    cin >> n;
-    vector<int > f(n, 0);
-    vector<int > parent(n, 0);
-    priority_queue<pr, vector<pr >, myComp > pq;
-    for(int i = 0; i < n; i++) {
-        cin >> f[i];
-        if(f[i] != 0) {
-            parent[f[i]-1] = i + 1;
-        }
-    }
-    for(int i = 0; i < n; i++) {
-        if(parent[i] == 0) {
-            if(f[i] == 0) {
-                pq.push(make_pair(i, 2));
-            }
-            else {
-                pq.push(make_pair(i, 1));
-            }
-        }
-    }
-    //cout << pq.top().fi + 1 << "\n";
-    for(int i = 0; i < n; i++) {
-        if(f[i] == 0) {
-            pr ele = pq.top();
-            if(ele.fi != i) {
-                pq.pop();
-                f[i] = ele.fi + 1;
-                parent[ele.fi] = i + 1;
-            }
-            else {
-                pq.pop();
-                pr ele2 = pq.top();
-                pq.pop();
-                pq.push(ele);
-                f[i] = ele2.fi + 1;
-                parent[ele2.fi] = i + 1;
-            }
-        }
-    }
-    for(int i = 0; i < n; i++) {
-        cout << f[i] << " ";
-    }
-    cout << "\n";
+#define ll long long
+#define ull unsigned long long
+#define pii pair < int,int>
+#define pll pair < ll , ll >
+#define X first
+#define Y second
+inline ll gcd(ll a, ll b) { while (b != 0) { ll c = a % b; a = b; b = c; }return a < 0 ? -a : a; }
+inline ll lcm(ll a, ll b) { return (a * b) / gcd(a, b); }
+inline ll lowbit(ll x) { return x & (-x); }
+const int inf = 0x3f3f3f3f;
+const ll INF = 0x3f3f3f3f3f3f3f3f;
+const ll mod = 998244353;
+inline ll rd() {
+	ll x = 0, f = 1; char ch = getchar();
+	while (ch<'0' || ch>'9') { if (ch == '-')f = -1; ch = getchar(); }
+	while (ch >= '0' && ch <= '9') { x = (x << 3) + (x << 1) + (ch ^ 48); ch = getchar(); }
+	return x * f;
 }
-int main()
-{
-    solve();
-    return 0;
+const double eps = 1e-8;
+const int M = 4e6 + 10;
+const int N = 1e6 + 10;
+int g[N];
+int bg[N];
+char s[N];
+bool vis[N];
+vector<int>v;
+int main() {
+	int n = rd();
+	for (int i = 1; i <= n; i++) {
+		g[i] = rd();
+		if (g[i] != 0)
+			bg[g[i]] = i;
+	}
+	for (int i = 1; i <= n; i++) {
+		if (g[i] == 0 && bg[i] == 0)v.push_back(i);
+	}
+	bool flag = 0;
+	for (int i = 1; i <= n; i++) {
+		//if (vis[i])continue;
+		if (g[i] != 0 && bg[i] == 0) {
+			int tmp = i;
+			while (g[tmp] != 0) {
+				//vis[tmp] = 1;
+				tmp = g[tmp];
+			}
+			if (!flag) {
+				for (int j = 0; j < v.size(); j++) {
+					g[tmp] = v[j];
+					bg[v[j]] = tmp;
+					tmp = v[j];
+				}
+				//g[tmp] = i;
+				flag = 1;
+			}
+			g[tmp] = i;
+		}
+	}
+	if (!flag && v.size()) {
+		int tmp = v[0];
+		for (int i = 1; i < v.size(); i++) {
+			g[tmp] = v[i];
+			tmp = v[i];
+		}
+		g[tmp] = v[0];
+	}
+	for (int i = 1; i <= n; i++) {
+		cout << g[i] << " ";
+	}
+	cout << endl;
 }
