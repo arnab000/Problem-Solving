@@ -1,81 +1,71 @@
-#include <iostream>
-#include <queue>
- 
+#include <bits/stdc++.h>
+#define li long int
+#define lli long long int
 using namespace std;
-/*2 1 * * * *
-1 2 * * * *
+#define pb push_back
+#define ppb pop_back
+#define fi first
+#define se second
+#define rep(i, l, r) for(i=l; i<=r; i++)
+#define repr(i, r, l) for(i=r; i>=l; i--)
+typedef pair<int, int> pr;
  
+class myComp {
+    public:
+        bool operator() (pr &p1, pr &p2) {
+            return p2.se > p1.se;
+        }
+};
  
-5
-5 0 0 2 4
-0 4 0 5 1
-*/
+void solve() 
+{
+    int n;
+    cin >> n;
+    vector<int > f(n, 0);
+    vector<int > parent(n, 0);
+    priority_queue<pr, vector<pr >, myComp > pq;
+    for(int i = 0; i < n; i++) {
+        cin >> f[i];
+        if(f[i] != 0) {
+            parent[f[i]-1] = i + 1;
+        }
+    }
+    for(int i = 0; i < n; i++) {
+        if(parent[i] == 0) {
+            if(f[i] == 0) {
+                pq.push(make_pair(i, 2));
+            }
+            else {
+                pq.push(make_pair(i, 1));
+            }
+        }
+    }
+    //cout << pq.top().fi + 1 << "\n";
+    for(int i = 0; i < n; i++) {
+        if(f[i] == 0) {
+            pr ele = pq.top();
+            if(ele.fi != i) {
+                pq.pop();
+                f[i] = ele.fi + 1;
+                parent[ele.fi] = i + 1;
+            }
+            else {
+                pq.pop();
+                pr ele2 = pq.top();
+                pq.pop();
+                pq.push(ele);
+                f[i] = ele2.fi + 1;
+                parent[ele2.fi] = i + 1;
+            }
+        }
+    }
+    for(int i = 0; i < n; i++) {
+        cout << f[i] << " ";
+    }
+    cout << "\n";
+}
 int main()
 {
-    int n,i,j;
-    cin>>n;
-    int a[n+1]= {0},b[n+1]= {0};
- 
-    queue <int> k;
-    for (i=1; i<=n; i++)
-    {
-        cin>>a[i];
-        b[a[i]]=i;
-    }
-    for (i=1; i<=n; i++)
-    {
-        if (b[i]==0)
-           {
-                k.push(i);
-   //     cout<<i<<" ";
-    }}
-  /*  cout<<endl;
-    for (i=1; i<=n; i++)
-        cout<<a[i]<<' ';
-    cout<<endl;
-    for (i=1; i<=n; i++)
-        cout<<b[i]<<' ';
-    cout<<endl;
-5
-5 0 0 2 4
-0 4 0 5 1
-1 3
-*/
-for (i=1;i<=n;i++){
- 
-    if(a[i]+b[i]==0) {
- 
-         if (k.front()==i)
-            {
-                k.push(k.front());
-                k.pop();
- 
-            }
-            a[i]=k.front();
-            k.pop();
-            b[a[i]]=i;
- 
-    }
-}
-    for (i=1; i<=n; i++)
-    {
- 
-        if (a[i])
-            cout<<a[i]<<" ";
-        else
-        {
-          /*  if (k.front()==i)
-            {
-                k.push(k.front());
-                k.pop();
- 
-            }*/
-            cout<<k.front()<<" ";
-            k.pop();
- 
- 
-        }
- 
-    }
+    solve();
     return 0;
 }
