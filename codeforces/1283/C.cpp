@@ -1,67 +1,57 @@
-#include<bits/stdc++.h>
-#define ll long long
-#define ld long double
-#define vec vector
-#define psb push_back
-#define ppb pop_back
-#define mkp make_pair
-#define fst first
-#define scd second
-#define ins insert
-#define psf push_front
-#define ppf pop_front
+#include <bits/stdc++.h>
 using namespace std;
+#define ll long long
+#define ull unsigned long long
+void bst(){
+	ios_base::sync_with_stdio(0);
+	cin.tie(0);
+	cout.tie(0);
+}
+int arr[(int)2e5 + 100];
+bool pol[(int)2e5 + 100];
+int ans[(int)2e5 + 100];
+bool pod[(int)2e5 + 100];
 int main() {
-	//ios_base :: sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
-	ll n, i;
+	bst();
+	int n;
 	cin >> n;
-	ll a[n];
-	ll indeg[n] = {0};
-	ll outdeg[n] = {0};
-	for(i = 0; i < n; i++) {
-		cin >> a[i];
- 		a[i]--;
-		if(a[i] > -1) {
-			indeg[a[i]]++;
-			outdeg[i]++;
-		}
+	for(int i = 1; i <= n;i++){
+	cin >> arr[i];
+	if(arr[i] != 0){
+	pol[arr[i]] = 1;
+	pod[i] = 1;
 	}
-	vec<ll> b;
-	for(i = 0; i < n; i++) {
-		if(indeg[i] == 0 && outdeg[i] == 0) {
-			b.psb(i);
-		}
 	}
-	ll sz = b.size();
-	for(i = 0; i < sz - 1; i++) {
-		a[b[i]] = b[i + 1];
-		outdeg[b[i]]++;
-		indeg[b[i+1]]++;
+	int cnt = 0;
+	for(int i = 1;i <= n;i++){
+		if(pol[i] == 0 && pod[i] == 1)ans[cnt] = i,cnt++;
 	}
-	set<ll> cc, dd, bb;
-	for(i = 0; i < n; i++) {
-		if(outdeg[i] == 0 && indeg[i] == 0){
-			bb.ins(i);
-			continue;
-		}
-		if(outdeg[i] == 0){
-			cc.ins(i);
-		}
-		if(indeg[i] == 0){
-			dd.ins(i);
-		}
+	int k = 0;
+	for(int i = 1;i <= n;i++){
+	if(pod[i] == 0 && pol[i] == 0 && k != cnt ){
+		arr[i] = ans[k];
+		k++;
+		pod[i] = 1;
+		pol[arr[i]] = 1;
 	}
-	if(!bb.empty()) {
-		a[*cc.begin()] = *bb.begin();
-		cc.erase(*cc.begin());
-		cc.ins(*bb.begin());
+}
+cnt = 0;
+	for(int i = 1;i <= n;i++){
+		if(pol[i] == 0)ans[cnt] = i,cnt++;
 	}
-	while(!cc.empty()) {
-		a[*cc.begin()] = *dd.begin();
-		dd.erase(*dd.begin());
-		cc.erase(*cc.begin());
+k = 0;
+for(int i = 1;i <= n;i++){
+	if(arr[i] == 0){
+		if(pod[ans[k + 1]] == 0 && cnt - k == 2)swap(ans[k], ans[k + 1]);
+		if(i == ans[k])swap(ans[k],ans[k + 1]);
+		arr[i] = ans[k];
+		k++;
+		pol[arr[i]] = 1;
+		pod[i] = 1;
 	}
-	for(i = 0; i < n; i++)
-		cout<< a[i] + 1 <<" ";
- 	return 0;
+}
+for(int i = 1;i <= n;i++){
+	cout<<arr[i]<<" ";
+}
+	return 0;
 }
