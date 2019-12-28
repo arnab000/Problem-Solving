@@ -1,84 +1,71 @@
-//#include<bits/stdc++.h>
-#include<set>
-#include<map>
-#include<stack>
-#include<cmath>
-#include<queue>
-#include<cstdio>
-#include<string>
-#include<vector>
-#include<cstring>
-#include<iostream>
-#include<algorithm>
-#include<unordered_map>
+#include <bits/stdc++.h>
 using namespace std;
-#define ll long long
-#define ull unsigned long long
-#define pii pair < int,int>
-#define pll pair < ll , ll >
-#define X first
-#define Y second
-inline ll gcd(ll a, ll b) { while (b != 0) { ll c = a % b; a = b; b = c; }return a < 0 ? -a : a; }
-inline ll lcm(ll a, ll b) { return (a * b) / gcd(a, b); }
-inline ll lowbit(ll x) { return x & (-x); }
-const int inf = 0x3f3f3f3f;
-const ll INF = 0x3f3f3f3f3f3f3f3f;
-const ll mod = 998244353;
-inline ll rd() {
-	ll x = 0, f = 1; char ch = getchar();
-	while (ch<'0' || ch>'9') { if (ch == '-')f = -1; ch = getchar(); }
-	while (ch >= '0' && ch <= '9') { x = (x << 3) + (x << 1) + (ch ^ 48); ch = getchar(); }
-	return x * f;
-}
-const double eps = 1e-8;
-const int M = 4e6 + 10;
-const int N = 1e6 + 10;
-int g[N];
-int bg[N];
-char s[N];
-bool vis[N];
-vector<int>v;
+#define endl "\n"
+#define mod 1000000007
+#define loopitr(i, x) for(auto i=x.begin(); i!=x.end(); i++)
+#define loopitrev(i, x) for(auto i=x.rbegin(); i!=x.rend(); i++)
+#define bug " BUG\n"
+using ll=long long;
+using vll=vector<ll>;
+using vpp=vector<pair<ll, ll> >;
+ 
 int main() {
-	int n = rd();
-	for (int i = 1; i <= n; i++) {
-		g[i] = rd();
-		if (g[i] != 0)
-			bg[g[i]] = i;
-	}
-	for (int i = 1; i <= n; i++) {
-		if (g[i] == 0 && bg[i] == 0)v.push_back(i);
-	}
-	bool flag = 0;
-	for (int i = 1; i <= n; i++) {
-		//if (vis[i])continue;
-		if (g[i] != 0 && bg[i] == 0) {
-			int tmp = i;
-			while (g[tmp] != 0) {
-				//vis[tmp] = 1;
-				tmp = g[tmp];
-			}
-			if (!flag) {
-				for (int j = 0; j < v.size(); j++) {
-					g[tmp] = v[j];
-					bg[v[j]] = tmp;
-					tmp = v[j];
-				}
-				//g[tmp] = i;
-				flag = 1;
-			}
-			g[tmp] = i;
-		}
-	}
-	if (!flag && v.size()) {
-		int tmp = v[0];
-		for (int i = 1; i < v.size(); i++) {
-			g[tmp] = v[i];
-			tmp = v[i];
-		}
-		g[tmp] = v[0];
-	}
-	for (int i = 1; i <= n; i++) {
-		cout << g[i] << " ";
-	}
-	cout << endl;
+    ll n, t1, t2, t3;
+    vll arr, same, rem;
+    set<int> left;
+ 
+    cin >> n;
+    vll sett(n+5, 0);
+    for(int i = 0; i < n; i++) {
+        cin >> t1;
+        arr.push_back(t1);
+        sett[t1] = 1;
+    }
+    for(int i = 1; i <= n; i++) {
+        if(sett[i] == 0) left.insert(i);
+    }
+    loopitr(i, left) {
+        if(arr[(*i)-1] == 0) {
+            same.push_back(*i);
+            //left.erase(*i);
+            rem.push_back(*i);
+        }
+    }
+    loopitr(i, rem) {
+        left.erase(*i);
+        // cout << *i << bug;
+    }
+    // loopitr(i, left) cout << *i << ' ';
+    // cout << bug;
+    // loopitr(i, same) cout << *i << ' ';
+    for(int i = 0; i < same.size(); i += 2) {
+        if(i + 1 < same.size()) {
+        arr[same[i]-1] = same[i+1];
+        arr[same[i+1]-1] = same[i];}
+    }
+    if(left.size()!=0) {
+        if(same.size()&1) {
+            arr[same.back()-1] = *left.begin();
+            left.erase(*left.begin());
+            for(int i = 0; i < n; i++) {
+                if(arr[i] == 0) {
+                    arr[i] = same.back();
+                    break;
+                }
+            }
+        }
+        auto j = left.begin();
+        for(int i = 0; i < n; i++) {
+            if(!arr[i]) {
+                arr[i] = *j;
+                j++;
+            }
+        }
+    }
+    else if(same.size()&1) {
+        arr[same.back()-1] = same[1];
+        arr[same[1]-1] = same[0];
+        arr[same[0]-1] = same.back();
+    }
+    loopitr(i, arr) cout << *i << ' ';
 }
