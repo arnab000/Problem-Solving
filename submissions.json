@@ -6945,6 +6945,23 @@
     ],
     "timestamp": "Dec/28/2019 23:08"
   },
+  "CF70316982": {
+    "contest_id": 1296,
+    "language": "GNU C++17",
+    "path": "codeforces/1296/C.cpp",
+    "platform": "Codeforces",
+    "problem_index": "C",
+    "problem_name": "Yet Another Walking Robot",
+    "problem_url": "https://codeforces.com/contest/1296/problem/C",
+    "submission_id": "CF70316982",
+    "submission_url": "https://codeforces.com/contest/1296/submission/70316982",
+    "tags": [
+      "data structures",
+      "implementation",
+      "*1500"
+    ],
+    "timestamp": "Feb/05/2020 03:22"
+  },
   "CF70332607": {
     "contest_id": 1296,
     "language": "GNU C++17",
