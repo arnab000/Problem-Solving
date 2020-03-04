@@ -895,6 +895,23 @@
     ],
     "timestamp": "Jan/08/2021 23:01"
   },
+  "CF72472843": {
+    "contest_id": 1316,
+    "language": "GNU C++17",
+    "path": "codeforces/1316/C.cpp",
+    "problem_index": "C",
+    "problem_name": "Primitive Primes",
+    "problem_url": "https://codeforces.com/contest/1316/problem/C",
+    "submission_id": "CF72472843",
+    "submission_url": "https://codeforces.com/contest/1316/submission/72472843",
+    "tags": [
+      "constructive algorithms",
+      "math",
+      "ternary search",
+      "*1800"
+    ],
+    "timestamp": "Mar/05/2020 02:53"
+  },
   "CF72631118": {
     "contest_id": 1323,
     "language": "GNU C++17",
