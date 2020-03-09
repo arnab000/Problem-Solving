@@ -1,90 +1,83 @@
-#pragma GCC optimize("Ofast")
-#pragma GCC target("avx,avx2,fma")
- 
 #include<bits/stdc++.h>
- 
 using namespace std;
+typedef		long long       ll;
+typedef		vector<ll>      vll;
+#define		pb              push_back
+#define		PB              pop_back
+#define		nn              "\n"
+#define		all(p)          p.begin(),p.end()
+#define		zz(v)           (ll)v.size()
+#define		mms(ar,a)       memset(ar,a,sizeof(ar))
+#define		ss              ' '
+#define 	S(a)            scanf("%lld",&a)
+#define 	SS(a,b)         scanf("%lld %lld",&a,&b)
+#define 	SSS(a,b,c)      scanf("%lld %lld %lld",&a,&b,&c)
+#define		gcd(a,b)        __gcd(a,b)
+#define		lcm(a,b)        (a*b)/gcd(a,b)
+#define		pi              acos(-1.0)
+#define		OO              100000000000000000
  
-#define sz(x) (int)(x).size()
-#define pb push_back
-#define x first
-#define y second
-#define lb lower_bound
-#define ub upper_bound
-#define all(x) x.begin(), x.end()
- 
-typedef long long ll;
-typedef long double ld;
- 
-typedef pair<int, int> pii;
-typedef pair<ll,ll> pll;
-typedef pair<ld,ld> pdd;
-typedef pair<int,ld> pild;
-typedef vector<int> vi;
-typedef vector<bool> vb;
-typedef vector<string> vs;
-typedef vector<ld> vd;
-typedef vector<ll> vll;
-typedef vector<pii> vpii;
-typedef vector<pll> vpll;
-typedef vector<pild> vpild;
-typedef vector<vector<int>> vvi;
-typedef vector<vector<ll>> vvll;
-typedef vector<vector<pii>> vvpii;
-typedef vector<vector<pll>> vvpll;
-typedef unordered_map<int, int> umii;
-typedef unordered_map<ll, ll> umll;
-typedef unordered_set<int> usi;
-typedef unordered_set<ll> usll;
-typedef unordered_set<pii> uspii;
-typedef unordered_set<string> uss;
-typedef queue<int> qi;
-typedef complex<double> base;
- 
-#define FOR(i, a, b) for (int i=a; i<(b); ++i)
-#define F0R(i, a) for (int i=0; i<(a); ++i)
-#define FORd(i,a,b) for (int i = (b)-1; i >= a; --i)
-#define F0Rd(i,a) for (int i = (a)-1; i >= 0; --i)
- 
-const int MOD = 1e9 + 7;
-const ll INF = 1e18;
-const int inf = 1e9;
-const int MX = 1e5 + 1;
- 
-int gcd(int a, int b) { return a ? gcd(b % a, a) : b; }
- 
-int main() {
-    ios_base::sync_with_stdio(false);
-    cin.tie(nullptr);
- 
-    int t;
-    cin >> t;
-    F0R(q, t) {
-        ll n, k;
-        cin >> n >> k;
-        vll a(n);
-        F0R(i, n) cin >> a[i];
-        vi mak(60, 0);
-        bool flag = true;
-        F0R(i, n) {
-            while (a[i]) {
-                ll curr = 1;
-                int cnt = 0;
-                while (curr <= a[i]) {
-                    curr *= k; ++cnt;
-                }
-                curr /= k;
-                if (mak[cnt]) {
-                    cout << "NO\n";
-                    flag = false;
-                    break;
-                }
-                mak[cnt] = 1;
-                a[i] -= curr;
-            }
-            if (!flag) break;
+int main(){
+//    freopen("input.txt","r",stdin);
+    ll a,b,c=0,i,j,t,k,lie,m,n,o,x,y,z,p=0;
+    S(t);
+    while(t--){
+        vll v,vv;
+        a=1;
+        ll ar[33],cnt=0;
+        ll tp[100]={0};
+        SS(n,k);
+        for(i=0;i<n;i++) S(ar[i]);
+        while(a<=OO){
+            v.pb(a);
+            a*=k;
         }
-        if (flag) cout << "YES\n";
+        for(i=0;i<n;i++){
+            if(ar[i]!=0){
+                bool bb=binary_search(all(v),ar[i]);
+                if(bb){
+                    auto it=lower_bound(all(v),ar[i]);
+                    z=it-v.begin();
+                    vv.pb(z);
+                }
+                else{
+                    vll vt;
+                    ll sm=0,p=0;
+                    x=ar[i];
+                    while(x){
+                        auto it=upper_bound(all(v),x);
+                        z=it-v.begin()-1;
+                        vt.pb(z);
+                        x-=v[z];
+                        if(z<0) break;
+                    }
+                    if(x==0){
+                        for(j=0;j<zz(vt);j++){
+                            vv.pb(vt[j]);
+                        }
+                    }
+                    else{
+                        cout<<"NO"<<nn;
+                        p=1;
+                        break;
+                    }
+                }
+ 
+            }
+ 
+        }
+        if(p==1) continue;
+        sort(all(vv));
+        ll pp=0;
+        for(i=1;i<zz(vv);i++){
+            if(vv[i]==vv[i-1]){
+                cout<<"NO"<<nn;
+                pp=1;
+                break;
+            }
+        }
+        if(pp==1) continue;
+        cout<<"YES"<<nn;
     }
  
     return 0;
