@@ -1,65 +1,81 @@
-#include<bits/stdc++.h>
-using namespace std;
+#include <bits/stdc++.h>
+ 
 typedef long long ll;
-#define all(x) x.begin(), x.end()
-#define fori(x) for(ll i=0; i<x; i++)
-#define mp make_pair
-#define pb push_back
+typedef unsigned long long ull;
+typedef unsigned short int us;
  
+#define forn(i, n) for (int i = 0; i < int(n); ++i)
  
-int main(){
+using namespace std;
  
-      ll t;
-      cin >> t;
-      while(t--){
-            ll n, k;
-            cin >> n >> k;
-            // cout << n << " " << k << endl;
-            vector<ll> v(n, 0), a(n, 0);
-            bool all_zero = true;
-            fori(n){
-                  cin >> a[i];
-                  if(a[i] != 0)
-                        all_zero = false;
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+ 
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        int n, k;
+        cin >> n >> k;
+        vector<int> u(70);
+ 
+        bool no = false;
+ 
+        for (int i = 0; i < n; ++i)
+        {
+            ll a;
+            cin >> a;
+ 
+            int p = 0;
+ 
+            while(a)
+            {
+                if(a % k)
+                {
+                    u[p]++;
+                    if(u[p] > 1)
+                        no = true;
+                    --a;
+                    if(a % k)
+                    {
+                        no = true;
+                        break;
+                    }
+                    else
+                    {
+                        a /= k;
+                        ++p;
+                    }
+                }
+                else
+                {
+                    a /= k;
+                    ++p;
+                }
             }
-            if(all_zero){
-                  cout << "YES\n";
-                  continue;
-            }
-            ll kth = k, pow = 0;
-            bool run = true, found = false, zeroes = true;
-            while(run){
-                  found = false;
-                  zeroes = true;
-                  fori(n){
-                        // cout << "i: "<< i << endl;
-                        if(a[i] != 0){
-                              // cout << a[i] << " is not zero\n";
-                              zeroes = false;
-                        }
-                        else continue;
-                        if(a[i]%kth >= 1 && a[i]!=0){
-                              // cout << a[i] << " is having sum of " << kth << endl;
-                              if(found || a[i]%kth > 1){
-                                    cout << "NO\n";
-                                    goto end;
-                              }
-                              found = true;
-                        }
-                        a[i] /= kth;
-                  }
-                  // cout << boolalpha << zeroes << endl; 
-                  if(zeroes){
-                        cout << "YES\n";
-                        goto end;
-                  }
-                  // kth *= k;  
-            }
-            end:
-            if(1){
+        }
  
-            }
-      }
+       /* for(auto i : u)
+        {
+            cout << u[i] << ' ';
  
-      return 0;
+            if(u[i] > 1)
+            {
+                no = true;
+                //break;
+            }
+        }*/
+ 
+        if (no)
+            cout << "NO\n";
+        else
+            cout << "YES\n";
+ 
+ 
+    }
 }
+ 
+ 
+ 
