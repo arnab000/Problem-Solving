@@ -1,58 +1,45 @@
-#include<iostream>
-#include<algorithm>
-#include<queue>
-#include<map>
-#include<stdio.h>
-#include<vector>
-#include<cstring>
+#include<bits/stdc++.h>
 using namespace std;
-long long a[200000];
-long long ans;
+#define Jewel ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
 int main()
 {
-    std::ios::sync_with_stdio(false);
-    std::cin.tie(0);
-    long long t;
-    cin>>t;
-    while(t--)
+    Jewel;
+    int q;
+    cin>>q;
+    while(q--)
     {
-        
-        memset(a,0,sizeof(a));
-        long long vis=1;
-       long long n,k;
-       long long num;
-       cin>>n>>k;
-       for(long long i=0;i<n;i++)
+        long long int n, k, i, a, d, ind;
+        cin>>n>>k;
+        set<long long>s;
+        s.clear();
+        bool ok = true;
+        for(i=0; i<n; i++)
         {
-            long long len=0;
-            cin>>num;
-            while(num)
+            cin>>a;
+            ind=0;
+            while(a>0 && ok)
             {
-                a[len]+=num%k;
-                num/=k;
-                if(a[len++]>1)
+                d = a%k;
+                a = a/k;
+ 
+                if(d>1)
+                    ok = false;
+                if(d)
                 {
-                    vis=0;
+                    if(s.count(ind))
+                        ok = false;
+                    else
+                        s.insert(ind);
                 }
+                ind++;
             }
  
         }
-        if(vis==0)
-            
-            {
-                cout<<"NO"<<endl;
-            }
-            else
-            {
-                cout<<"YES"<<endl;
-            }
- 
+        if(ok)
+            cout<<"YES"<<endl;
+        else
+            cout<<"NO"<<endl;
  
     }
- 
- 
- 
-    
- 
     return 0;
 }
