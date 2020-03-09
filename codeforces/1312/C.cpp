@@ -1,76 +1,41 @@
-﻿#include<iostream>
- 
 #include<bits/stdc++.h>
- 
 using namespace std;
-#define SWS ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0)
-typedef long long ll;
- 
-const int MOD = (int)1e9 + 7;
- 
- 
- 
- 
-int main() {
-	int n;
-	cin >> n;
-	for (int i = 0; i < n; i++) {
-		long long sizee;
-		ll k;
- 
-		bool Good = true;
-		cin >> sizee >>k;
-		vector<ll>Mas(sizee);
-		vector<bool>Dt(100 , true);
- 
- 
-		for (int i = 0; i < sizee; i++) {
-			cin >> Mas[i];
-		}
- 
-		for (int i = 0; i < sizee; i++) {
- 
- 
-			ll temp = Mas[i];
-			vector<bool>Temp(100, true);
-			int its = 0;
- 
-			while (temp > 1) {
- 
-				if (temp % k > 1) {
-					Good = false;
-					break;
-				}
-				else if (temp % k == 1) {
-					Temp[its] = false;
-				}
-				its++;
-				temp = temp / k;
+long long a[40];
+long long ci[101];
+int t,n,k;
+int main()
+{
+	cin>>t;
+	while(t--)
+	{
+		memset(a,0,sizeof(a));
+		memset(ci,0,sizeof(ci));
+		cin>>n>>k;
+		int flag=0;
+		for(int i=1; i<=n; i++)
+		{
+			cin>>a[i];
+			int j=0;
+			while(a[i]>0)
+			{
+				ci[j]+=a[i]%k;
+				a[i]/=k;
+				j++;
 			}
-			if( Mas[i] != 0)
-			Temp[its] = false;
-		
-			for (int i = 0; i <=its; i++) {
-				if (Temp[ i ] == false) {
-					if (Dt[i] == false) {
-						Good = false;
-						break;
-					}
-					else {
-						Dt[i] = false;
-					}
-				}
-			}
- 
-			
 		}
-		if (Good == false) {
-			cout << "NO" << endl;
+		for(int i=0; i<=100; i++)
+		{
+			if(ci[i]>1)
+				flag=1;
 		}
-		else { cout << "YES" << endl; }
- 
- 
+		if(flag==1)
+		{
+			cout<<"NO"<<endl;
+			continue;
+		}
+		else
+			cout<<"YES"<<endl;
 	}
-	//	system("pause");
+ 
 	return 0;
 }
