@@ -895,6 +895,26 @@
     ],
     "timestamp": "Jan/08/2021 23:01"
   },
+  "CF72854346": {
+    "contest_id": 1312,
+    "language": "PyPy 3",
+    "path": "codeforces/1312/C.py",
+    "problem_index": "C",
+    "problem_name": "Adding Powers",
+    "problem_url": "https://codeforces.com/contest/1312/problem/C",
+    "submission_id": "CF72854346",
+    "submission_url": "https://codeforces.com/contest/1312/submission/72854346",
+    "tags": [
+      "bitmasks",
+      "greedy",
+      "implementation",
+      "math",
+      "number theory",
+      "ternary search",
+      "*1400"
+    ],
+    "timestamp": "Mar/10/2020 02:24"
+  },
   "CF72854411": {
     "contest_id": 1312,
     "language": "GNU C++17",
