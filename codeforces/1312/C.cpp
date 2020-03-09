@@ -1,78 +1,82 @@
-#include <bits/stdc++.h>
-#define fastio ios_base::sync_with_stdio(0),cin.tie(0),cout.tie(0)
-#define pb push_back
-#define mp make_pair
-#define INF (int)1e9
-#define cBits(x) __builtin_popcount(x)
-#define gcd(a,b) __gcd((a),(b))
-#define lcm(a,b) a/gcd(a,b)*b
-#define FOR(i,a,b) for (int i=a;i<b;i++)
-#define FORr(i,a,b) for (int i=a;i>=b;i--)
-#define MAX3(a,b,c) max(a,max(b,c))
-#define MIN3(a,b,c) min(a,min(b,c))
-#define eachTest int t; cin >> t; while(t--) solve();
+#pragma GCC optimizte("Ofast,fast-math,unroll-loops")
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <vector>
+#include <string>
+#include <stdio.h>
+#include <algorithm>
+#include <set>
+#include <map>
+#include <math.h>
+#include <cmath>
+#include <queue>
+#include <iomanip>
+#include <bitset>
+#include <unordered_map>
+#include <stack>
+#include <memory.h>
+#include <list>
+#include <numeric>
+#include <functional>
+#include <complex>
+#include <cassert>
+#include <random>
+ 
+#pragma comment(linker, "/STACK:36777216")
  
 using namespace std;
  
-typedef long long int ll;
-typedef unsigned long long int ull;
-typedef pair<ll,ll> PLL;
-typedef pair<int,int> PII;
- 
-const int MOD=1000000007;
- 
-void solve() {
-	ll n, k;
-	cin >> n >> k;
-	vector <ll> a(n);
-	// set <ll> forEach[n];
-	set <ll> uniqReq;
-	ll x;
-	FOR(i,0,n) {
-		cin >> a[i];
-	}
-	FOR(i,0,n) {
-		// cin >> a[i];
-		if (a[i]==0) {
-			continue;
-		}
-		x = a[i];
-		ll p = 0;
-		bool flag = false;
-		while(x) {
-			ll rem = x%k;
-			if (rem > 1) {
-				flag = true;
-				cout << "NO\n";
-				return;
-			}
-			if (rem == 1) {
-				if (uniqReq.find(p) != uniqReq.end()) {
-					cout << "NO\n";
-					return;
-				}
-				else {
-					uniqReq.insert(p);
-				}
-			}
-			p++;
-			x /= k;
-		}
-	}
-	cout << "YES\n";
-}
+typedef unsigned long long ull;
+typedef long long ll;
+typedef long double ld;
  
 int main() {
+#ifdef _DEBUG
+	freopen("input.txt", "r", stdin);
+	freopen("output.txt", "w", stdout);
+#else
+	//freopen("input.txt", "r", stdin);
+	//freopen("output.txt", "w", stdout);
+	//freopen("input.txt", "r", stdin);
+	//freopen("output.txt", "w", stdout);
+#endif
+	ios::sync_with_stdio(false);
+	cin.tie(0); cout.tie(0);
+	cout.precision(20); cout.setf(ios::fixed);
+	int t;
+	cin >> t;
  
-	fastio;
-	#ifndef ONLINE_JUDGE
-		freopen("input.txt", "r", stdin);
-		freopen("output.txt", "w", stdout);
-	#endif
+	while (t--) {
+		ll n, k;
+		cin >> n >> k;
+		set<ull>used;
+		vector<ull>pows;
+		ll v = 1;
+		for (int j = 0; ; j++) {
+			pows.emplace_back(v);
+			if (pows.back() >= 1e16) break;
+			v *= k;
+		}
  
-	eachTest
+		int ok = 1;
+		for (int i = 0; i < n; i++) {
+			ll x;
+			cin >> x;
+			for (int j = (int)pows.size() - 1; j >= 0; j--) {
+				if (x >= pows[j]) {
+					x -= pows[j];
+					if (!used.insert(j).second) {
+						ok = 0;
+						break;
+					}
+				}
+			}
  
-	
+			if (x) ok = 0;
+		}
  
+		if (ok) puts("YES");
+		else puts("NO");
+	}
 	return 0;
 }
