@@ -1,6 +1,14 @@
 #include<bits/stdc++.h>
 using namespace std;
+bool isPower(long long x, long long y)
+{
 
+
+	if(y%x==0)
+        return true;
+    else
+        return false;
+}
 int main()
 {
 long long test;
