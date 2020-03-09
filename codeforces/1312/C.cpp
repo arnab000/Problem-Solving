@@ -1,67 +1,44 @@
-#include <iostream>
-#include <cmath>
- 
+#include <bits/stdc++.h>
 using namespace std;
+typedef long long ll;
+typedef pair<int, int> pii;
+typedef pair<long, long> pll;
+const int maxn = 3e5 + 5;
+const int inf = 0x3f3f3f3f;
+const int mod = 1e9 + 7;
+ll T, n, k;
+ll bits[70];
+void change(ll x) {
+    vector<ll> v;
+    while (x) {
+        v.push_back(x % k);
+        x /= k;
+    }
+    for (int i = 0; i < v.size(); i++) {
+        bits[i] += v[i];
+    }
+}
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+    cin >> T;
+    while (T--) {
+        cin >> n >> k;
  
-int n,k,t;
-int fr[10001];
-long long sum;
- 
-int main()
-{
-    cin>>t;
-    while(t>0)
-    {
-        t--;
-        cin>>n>>k;
- 
-        int ok=1;
- 
-        for(int i=0; i<=100; i++)
-            fr[i]=0;
- 
-        for(int i=1; i<=n; i++)
-        {
-            long long x;
-            cin>>x;
-            //cout<<x<<" ";
-            long long nr=1,p=0;
- 
-            while(nr<x)
-            {
-                nr*=k;
-                p++;
-            }
- 
-            if(nr>x)
-            {
-                nr/=k;
-                p--;
-            }
- 
-            //cout<<nr<<endl;
- 
-            while(p>=0 && x>0)
-            {
-                if(fr[p]==0 && x-nr>=0)
-                {
-                    fr[p]=1;
-                    x=x-nr;
-                }
-               // cout<<x<<endl;
-                nr/=k;
-                p--;
-            }
- 
-            if(x!=0)
-                ok=0;
+        memset(bits, 0, sizeof(bits));
+        vector<ll> a(n, 0);
+        for (int i = 0; i < n; ++i) {
+            cin >> a[i];
+            change(a[i]);
         }
- 
-        if(ok==0)
-            cout<<"NO"<<'\n';
-        else
-            cout<<"YES"<<'\n';
- 
+        int ok = 1;
+        for (int i = 0; i < 64; ++i) {
+            if (bits[i] > 1) {
+                ok = 0;
+                break;
+            }
+        }
+        cout << (ok ? "YES" : "NO") << endl;
     }
     return 0;
 }
