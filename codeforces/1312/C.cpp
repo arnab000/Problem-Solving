@@ -1,44 +1,60 @@
 #include <bits/stdc++.h>
-using namespace std;
-typedef long long ll;
-typedef pair<int, int> pii;
-typedef pair<long, long> pll;
-const int maxn = 3e5 + 5;
-const int inf = 0x3f3f3f3f;
-const int mod = 1e9 + 7;
-ll T, n, k;
-ll bits[70];
-void change(ll x) {
-    vector<ll> v;
-    while (x) {
-        v.push_back(x % k);
-        x /= k;
-    }
-    for (int i = 0; i < v.size(); i++) {
-        bits[i] += v[i];
-    }
-}
-int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(0);
-    cin >> T;
-    while (T--) {
-        cin >> n >> k;
+#define ll long long  
+#define inf (ll)1000000000000000
+#define inf1 (ll)1000000000000000
+#define MOD 1000000007
+#define maxn 400010
+#define pb push_back
+#define pll pair<ll,ll>
+#define vi vector<ll>
+#define vvi vector<vector<ll> >
+#define vii vector<pll> 
+#define vvpll vector<vector<pll> >
+#define vpll vector<pll> 
  
-        memset(bits, 0, sizeof(bits));
-        vector<ll> a(n, 0);
-        for (int i = 0; i < n; ++i) {
-            cin >> a[i];
-            change(a[i]);
-        }
-        int ok = 1;
-        for (int i = 0; i < 64; ++i) {
-            if (bits[i] > 1) {
-                ok = 0;
-                break;
-            }
-        }
-        cout << (ok ? "YES" : "NO") << endl;
-    }
-    return 0;
+using namespace std;
+ 
+int main() 
+{
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
+	ll t;
+	cin>>t;
+	while(t--)
+	{
+		ll n,k;
+		cin>>n>>k;
+		ll a[n],powk[64];
+		powk[0]=1;
+		for(int i=1;i<64;i++)
+		{
+			powk[i]=powk[i-1]*k;
+		}
+		map<ll,ll> mp;
+		for(int i=0;i<n;i++){
+			cin>>a[i];
+			ll temp=a[i],cnt=0;
+			while(temp>0)
+			{
+				mp[powk[cnt]]+=temp%k;
+				temp/=k;
+				cnt++;
+			}
+		}
+		int flag=0;
+		for(int i=0;i<64;i++)
+		{
+			if(mp[powk[i]]>=2)
+			{
+				cout<<"NO\n";
+				flag=1;
+				break;
+			}
+		}
+		if(flag==0)
+		{
+			cout<<"YES\n";
+		}
+	}
 }
