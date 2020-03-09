@@ -1,63 +1,44 @@
-#include <bits/stdc++.h>
- 
+#include <iostream>
+#include <vector>
+#include <algorithm>
 using namespace std;
- 
-using ll = long long;
-using Vi = vector<int>;
-using Vl = vector<ll>;
-using Pii = pair<int, int>;
-using Pll = pair<ll, ll>;
- 
-constexpr int I_INF = numeric_limits<int>::max();
-constexpr ll L_INF = numeric_limits<ll>::max();
- 
-//==================================
- 
 int main() {
-    cin.tie(0);
-    ios::sync_with_stdio(false);
- 
-    int Q;
-    cin >> Q;
-    while (Q--) {
-        int n, k;
-        cin >> n >> k;
-        Vl a(n);
-        for (int i = 0; i < n; i++) {
-            cin >> a[i];
-        }
-        bool ok = true;
-        while (1) {
-            int cnt = 0;
-            int cnt_zero = 0;
-            for (int i = 0; i < n; i++) {
-                if (a[i] == 0) {
-                    ++cnt_zero;
-                }
-                if (a[i] % k == 1) {
-                    ++cnt;
-                    a[i] /= k;
-                }
-                else if (a[i] % k == 0) {
-                    a[i] /= k;
-                }
-                else {
-                    ok = false;
-                    break;
-                }
-            }
-            if (cnt > 1) {
-                ok = false;
-            }
-            if (!ok) {
-                break;
-            }
-            if (cnt_zero == n) {
-                break;
-            }
-        }
-        cout << (ok ? "YES" : "NO") << "\n";
-    }
- 
-    return 0;
+	int t;
+	cin >> t;
+	for (int i = 0; i < t; i++) {
+		int n, k;
+		cin >> n >> k;
+		vector<long long> a(n);
+		for (int j = 0; j < n; j++) 
+			cin >> a[j];
+		vector<long long> st1;
+		vector<int> st2;
+		st1.push_back(1);
+		st2.push_back(0);
+		for (int j = 1; j < 64; j++) {
+			if (st1[j - 1] * k > 10000000000000000)
+				break;
+			st2.push_back(0);
+			st1.push_back(st1[j - 1] * k);
+		}
+		for (int j = 0; j < n; j++) {
+			for (int l = st1.size()-1; l >= 0; l--) {
+				if (a[j] >= st1[l]) {
+					if (st2[l] == 0) {
+						st2[l] = 1;
+						a[j] -= st1[l];
+					}
+				}
+			}
+		}
+		for (int j = 0; j < n; j++) {
+			if (a[j] != 0) {
+				cout << "NO" << endl;
+				break;
+			}
+			if (j == n - 1)
+				cout << "YES" << endl;
+		}
+	}
+	return 0;
 }
