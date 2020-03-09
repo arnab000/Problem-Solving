@@ -1,77 +1,91 @@
+#pragma GCC optimize("Ofast")
+#pragma GCC target("avx,avx2,fma")
+ 
 #include<bits/stdc++.h>
  
 using namespace std;
  
-typedef unsigned long long ull;
-typedef long long ll;
-typedef pair<int, int> ii;
-typedef vector<ii> vii;
-typedef vector<int> vi;
-typedef vector<ll> vll;
- 
-#define PI (2*acos(0.0))
-#define eps 1e-9
+#define sz(x) (int)(x).size()
 #define pb push_back
-#define endl "\n"
-#define watch(x) cout << (#x) << " is " << (x) << endl;
-#define show(v) for(int fi = 0; fi < v.size(); fi++) cout << v[fi] << " "; cout << endl;
-#define showpair(v) for(int fi = 0; fi < v.size(); fi++) cout << v[fi].first << " " << v[fi].second << endl;
-#define ff first
-#define ss second
-#define fu cout << "lol" << endl;
-#define precision(n) cout << fixed << setprecision(n);
+#define x first
+#define y second
 #define lb lower_bound
-#define up upper_bound
-#define vscan for(i = 0;i<n;i++){cin>>in; v.pb(in);}
-#define all(a) a.begin(), a.end()
-#define min3(a,b,c) min(a,min(b,c))
-#define max3(a,b,c) max(a,max(b,c))
-#define mem(a,val) memset(a,val,sizeof(a))
-#define loop(i,n) for(i = 0; i < n; i++)
-#define TC() ull T; cin>>T; while(T--)
-#define IN(x) {scanf("%d",&x);}
-#define LL(x) {scanf("%lld",&x);}
-#define CC(x) {scanf("%c",&x);}
-#define pfl(x) printf("%d\n",x)
-#define pfll(x) printf("%lld\n",x)
-#define newl puts("")
-#define space printf(" ")
-#define MOD 1000000007
-#define speed ios_base::sync_with_stdio(false); cin.tie(NULL);
+#define ub upper_bound
+#define all(x) x.begin(), x.end()
  
+typedef long long ll;
+typedef long double ld;
  
-int main()
-{
-    int i = 0, j = 0, cs = 0, in;
-    TC(){
-        int n, k; cin>>n>>k;
-        vll v;
-        for(i = 0; i < n; i++){
-            ll in; cin>>in; v.pb(in);
-        }
-        bool vis[65]; mem(vis,false);
-        bool f = 0;
-        for(i = 0; i < v.size(); i++){
-            ll para = v[i];
-            while(para > 0){
+typedef pair<int, int> pii;
+typedef pair<ll,ll> pll;
+typedef pair<ld,ld> pdd;
+typedef pair<int,ld> pild;
+typedef vector<int> vi;
+typedef vector<bool> vb;
+typedef vector<string> vs;
+typedef vector<ld> vd;
+typedef vector<ll> vll;
+typedef vector<pii> vpii;
+typedef vector<pll> vpll;
+typedef vector<pild> vpild;
+typedef vector<vector<int>> vvi;
+typedef vector<vector<ll>> vvll;
+typedef vector<vector<pii>> vvpii;
+typedef vector<vector<pll>> vvpll;
+typedef unordered_map<int, int> umii;
+typedef unordered_map<ll, ll> umll;
+typedef unordered_set<int> usi;
+typedef unordered_set<ll> usll;
+typedef unordered_set<pii> uspii;
+typedef unordered_set<string> uss;
+typedef queue<int> qi;
+typedef complex<double> base;
+ 
+#define FOR(i, a, b) for (int i=a; i<(b); ++i)
+#define F0R(i, a) for (int i=0; i<(a); ++i)
+#define FORd(i,a,b) for (int i = (b)-1; i >= a; --i)
+#define F0Rd(i,a) for (int i = (a)-1; i >= 0; --i)
+ 
+const int MOD = 1e9 + 7;
+const ll INF = 1e18;
+const int inf = 1e9;
+const int MX = 1e5 + 1;
+ 
+int gcd(int a, int b) { return a ? gcd(b % a, a) : b; }
+ 
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+ 
+    int t;
+    cin >> t;
+    F0R(q, t) {
+        ll n, k;
+        cin >> n >> k;
+        vll a(n);
+        F0R(i, n) cin >> a[i];
+        vi mak(60, 0);
+        bool flag = true;
+        F0R(i, n) {
+            while (a[i]) {
+                ll curr = 1;
                 int cnt = 0;
-                ll p = 1;
-                ll lol = para;
-                while(lol % k == 0){
-                    lol /= k;
-                    p *= k;
-                    cnt++;
+                while (curr <= a[i]) {
+                    curr *= k; ++cnt;
                 }
-                if(vis[cnt]){
-                    f = 1;
+                curr /= k;
+                if (mak[cnt]) {
+                    cout << "NO\n";
+                    flag = false;
                     break;
                 }
-                vis[cnt] = true;
-                para -= p;
+                mak[cnt] = 1;
+                a[i] -= curr;
             }
+            if (!flag) break;
         }
-        if(f) cout << "NO" << endl;
-        else cout << "YES" <<  endl;
+        if (flag) cout << "YES\n";
     }
+ 
     return 0;
 }
