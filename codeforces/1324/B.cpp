@@ -1,47 +1,35 @@
-#include <algorithm>
-#include <iostream>
-#include <cstdlib>
-#include <cstring>
-#include <string>
-#include <cstdio>
-#include <vector>
-#include <bitset>
-#include <cmath>
-#include <ctime>
-#include <queue>
-#include <stack>
-#include <set>
-#include <map>
+#include <bits/stdc++.h> 
+ 
 using namespace std;
-typedef long long ll;
+using ll=long long;
+using ull=unsigned long long;
+using pii=pair<int,int>;
  
-const int maxn = 1e4 + 5;
-const int inf = 0x3f3f3f3f;
+#define INF LONG_MAX
+#define MOD 1000000007
+#define rng(a) a.begin(),a.end()
+#define rrng(a) a.end(),a.begin()
+#define endl "\n"
  
-int read() {
-    int x = 0, f = 0; char ch = getchar();
-    while(ch < '0' || ch > '9') {if(ch == '-')f = -f; ch = getchar();}
-    while(ch >= '0' && ch <= '9') {x = (x<<3)+(x<<1)+ch-'0'; ch = getchar();}
-    return x;
-}
+int main(){
+  ios::sync_with_stdio(false);
+  cin.tie(0);
  
-int vis[maxn];
- 
-int main() {
-    int T;
-    scanf("%d", &T);
-    while(T--) {
-        int n, x; bool flag = false;
-        scanf("%d", &n);
-        memset(vis, 0, sizeof(vis));
-        for(int i = 1; i <= n; ++i) {
-            scanf("%d", &x);
-            if(!vis[x])         vis[x] = i;
-            if(i > 1 + vis[x])  flag = true;
-        }
-        if(flag)    puts("YES");
-        else        puts("NO");
+  int t;
+  cin>>t;
+  while(t--){
+    int n;
+    cin>>n;
+    vector<int>a(n);
+    for(int i=0;i<n;i++)cin>>a[i];
+    bool ok=false;
+    for(int i=0;i<n;i++){
+      for(int j=i+2;j<n;j++){
+        if(a[i]==a[j])ok=true;
+      }
     }
-    return 0;
+    if(ok)cout<<"YES"<<endl;
+    else cout<<"NO"<<endl;
+  }
+  return 0;
 }
- 
