@@ -2,7 +2,7 @@
 using namespace std;
 int main()
 {
- 
+
 long long t;
 cin>>t;
 while(t--)
@@ -17,10 +17,10 @@ for(long long i=0;i<s.size();i++)
     {
         sura.push_back(i+1);
     }
- 
- 
+
+
 }
- 
+
 if(sura.empty())
 {
     cout<<n+1<<endl;
@@ -35,7 +35,7 @@ for(long long i=0;i<sura.size()-1;i++)
 }
 cout<<mx<<endl;
 }
- 
- 
- 
+
+
+
 }
