@@ -895,6 +895,24 @@
     ],
     "timestamp": "Jan/08/2021 23:01"
   },
+  "CF73065766": {
+    "contest_id": 1324,
+    "language": "GNU C++17",
+    "path": "codeforces/1324/D.cpp",
+    "problem_index": "D",
+    "problem_name": "Pair of Topics",
+    "problem_url": "https://codeforces.com/contest/1324/problem/D",
+    "submission_id": "CF73065766",
+    "submission_url": "https://codeforces.com/contest/1324/submission/73065766",
+    "tags": [
+      "binary search",
+      "data structures",
+      "sortings",
+      "two pointers",
+      "*1400"
+    ],
+    "timestamp": "Mar/12/2020 20:27"
+  },
   "CF73084552": {
     "contest_id": 1324,
     "language": "GNU C++17",

@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
- 
+
 int main() {
 	int n;
 	long long int ssss = 0;
