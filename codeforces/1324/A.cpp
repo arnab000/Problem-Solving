@@ -2,12 +2,12 @@
 using namespace std;
 int main()
 {
- 
+
 long long test;
 cin>>test;
 while(test--)
 {
- 
+
     long long n;
     cin>>n;
     vector<long long>sura;
@@ -18,25 +18,25 @@ while(test--)
         cin>>k;
         sura.push_back(k);
         p=max(p,k);
- 
+
     }
     bool hbe=true;
- 
+
     for(long long j=0;j<n;j++)
     {
- 
-       if((sura[j]-p)  %2!=0)
+
+       if((sura[j]-p)%2!=0)
         hbe=false;
- 
+
     }
     if(hbe)
         cout<<"YES"<<endl;
     else
         cout<<"NO"<<endl;
- 
- 
+
+
 }
- 
- 
- 
+
+
+
 }
