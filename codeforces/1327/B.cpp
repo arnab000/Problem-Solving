@@ -1,71 +1,60 @@
-#include<bits/stdc++.h>
+#include <stdio.h>
+#include<iostream>
+#include <algorithm>
+#include<string.h>
+#include<cmath>
+#pragma warning(disable:4996)
+#define mod 1000000007
+#define ll unsigned long long
+const int N = 100005;
 using namespace std;
+int pr[N];
 int main()
- 
 {
-    long long test;
-    cin>>test;
-    while(test--)
-    {
-       long long n,k;
-       cin>>n;
-       map<long long ,bool>ma;
-       map<long long ,bool>ta;
-       long long prince=0,princes=0,j;
-       map<long long,bool>v;
-       bool baal=false;
-       for(long long i=0;i<n;i++)
-       {
-           cin>>k;
-           bool done=false;
-           vector<long long>l;
- 
-           while(k--)
-           {
-              long long p;
-              cin>>p;
-              l.push_back(p);
-              if(!ma[p] && !done)
-              {
-                  ma[p]=true;
-                  done=true;
-                  prince++;
- 
- 
- 
-              }
- 
-           }
-           if(done)
-            princes++;
-            else if(!done && !baal){
-            j=i+1;
-            for(long long i=0;i<l.size();i++)
-            {
-                v[l[i]]=true;
-            }
-            baal=true;
-            }
- 
- 
- 
-       }
-       if(n>prince)
-       {
-           cout<<"IMPROVE"<<endl;
-          cout<<j<<" ";
-           for(long long i=0;i<n;i++)
-           {
-               if(!ma[i+1] &&!v[i+1])
-               {
-                  cout<<i+1<<endl;
-                  break;
-               }
-           }
-       }
-       else
-        cout<<"OPTIMAL"<<endl;
- 
- 
-    }
+	int t, n,k;
+	cin >> t;
+	while (t--)
+	{
+		memset(pr, 0, sizeof(pr));
+		int id,a, b,tem,flag;
+		cin >> n ;
+		for (int i = 1; i <= n; i++)
+		{
+			cin >> k;
+			flag = 0;
+			while(k--)
+			{
+				cin >> tem;
+				if (!flag&&!pr[tem])
+				{
+					pr[tem] = 1;
+					flag = 1;
+				}
+			}
+			if (!flag)
+			{
+				id = i;
+			}
+		}
+		//kkkk
+		int f = 0;
+		for (int i = 1; i <= n; i++)
+		{
+			if (!pr[i])
+			{
+				b = i;
+				f = 1;
+				break;
+			}
+		}
+		if (f)
+		{
+			cout << "IMPROVE" << endl;
+			cout << id << " " << b << endl;
+		}
+		else
+			cout << "OPTIMAL" << endl;
+	}
+	
 }
+
