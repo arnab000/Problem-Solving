@@ -1,60 +1,92 @@
-#include <stdio.h>
-#include<iostream>
-#include <algorithm>
-#include<string.h>
-#include<cmath>
-#pragma warning(disable:4996)
-#define mod 1000000007
-#define ll unsigned long long
-const int N = 100005;
+#include <bits/stdc++.h>
+//For ordered_set
+#include <ext/pb_ds/assoc_container.hpp>
+#include <ext/pb_ds/tree_policy.hpp>
+#define MOD 1000000007
+#define test int t; cin>>t; while(t--)
+#define init(arr,val) memset(arr,val,sizeof(arr))
+#define loop(i,a,b) for(int i=a;i<b;i++)
+#define loopr(i,a,b) for(int i=a;i>=b;i--)
+#define loops(i,a,b,step) for(int i=a;i<b;i+=step)
+#define looprs(i,a,b,step) for(int i=a;i>=b;i-=step)
+#define ull unsigned long long int
+#define ll long long int
+#define P pair
+#define PLL pair<long long, long long>
+#define PII pair<int, int>
+#define PUU pair<unsigned long long int, unsigned long long int>
+#define L list
+#define V vector
+#define D deque
+#define ST set
+#define MS multiset
+#define M map
+#define UM unordered_map
+#define mp make_pair
+#define pb push_back
+#define pf push_front
+#define MM multimap
+#define F first
+#define S second
+#define IT iterator
+#define RIT reverse_iterator
+#define FAST ios_base::sync_with_stdio(false);cin.tie();cout.tie();
+#define FILE_READ_IN freopen("input.txt","r",stdin);
+#define FILE_READ_OUT freopen("output.txt","w",stdout);
+#define all(a) a.begin(),a.end()
 using namespace std;
-int pr[N];
-int main()
-{
-	int t, n,k;
-	cin >> t;
-	while (t--)
-	{
-		memset(pr, 0, sizeof(pr));
-		int id,a, b,tem,flag;
-		cin >> n ;
-		for (int i = 1; i <= n; i++)
-		{
-			cin >> k;
-			flag = 0;
-			while(k--)
-			{
-				cin >> tem;
-				if (!flag&&!pr[tem])
-				{
-					pr[tem] = 1;
-					flag = 1;
-				}
-			}
-			if (!flag)
-			{
-				id = i;
-			}
-		}
-		//kkkk
-		int f = 0;
-		for (int i = 1; i <= n; i++)
-		{
-			if (!pr[i])
-			{
-				b = i;
-				f = 1;
-				break;
-			}
-		}
-		if (f)
-		{
-			cout << "IMPROVE" << endl;
-			cout << id << " " << b << endl;
-		}
-		else
-			cout << "OPTIMAL" << endl;
-	}
-	
+// For ordered_set
+using namespace __gnu_pbds;
+template <typename T>
+using ord_set = tree<T,null_type,less<T>,rb_tree_tag,tree_order_statistics_node_update>;
+const ll maxn = 1e5;
+const ll inf = 1e9;
+const double pi = acos(-1);
+
+void solve(){
+    int nop;
+    cin >> nop;
+    bool prince[nop] = {false};
+    bool optimal = true;
+    int notMar;
+    for (int i = 0; i < nop; i++){
+        int n;
+        cin >> n;
+        bool married = false;
+        while(n--) {
+            int p;
+            cin >> p;
+            p--;
+            if(!prince[p] && !married) {
+                married = true;
+                prince[p] = true;
+            }
+        }
+        if(!married && optimal) {
+            notMar = i+1;
+            optimal = false;
+        }
+    }
+
+    if(optimal) cout << "OPTIMAL" << endl;
+    else {
+        cout << "IMPROVE" << endl << notMar << " ";
+        int notMarP;
+        for (notMarP = 0; notMarP < nop; notMarP++) {
+            if(!prince[notMarP]){
+                cout << notMarP+1 << endl;
+                break;
+            } 
+        }
+    }
+    
 }
 
+int main(){
+   int t = 0;
+   cin >> t;
+   while(t--){
+       solve();
+   }
+   return 0;
+}
