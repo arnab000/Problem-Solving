@@ -32,7 +32,7 @@ int main()
     bool pasa=false;
           for(long long i=1;i<=n;i++)
         {
-         if(sum[i-1]>0)
+         if(sum>0)
          {
            mn=min(mn,sura[i]-sum[i-1]);
            //pasa=true;
@@ -44,8 +44,7 @@ int main()
         for(long long i=0;i<n;i++)
         {
             if(sum[i]>0)
-                ans+=sum[i];
-
+           ans+=sum[i];
         }
         cout<<ans+mn<<endl;
     }
