@@ -9746,6 +9746,23 @@
     ],
     "timestamp": "Apr/26/2020 21:28"
   },
+  "CF78604253": {
+    "contest_id": 1324,
+    "language": "GNU C++17",
+    "path": "codeforces/1324/E.cpp",
+    "platform": "Codeforces",
+    "problem_index": "E",
+    "problem_name": "Sleeping Schedule",
+    "problem_url": "https://codeforces.com/contest/1324/problem/E",
+    "submission_id": "CF78604253",
+    "submission_url": "https://codeforces.com/contest/1324/submission/78604253",
+    "tags": [
+      "dp",
+      "implementation",
+      "*1700"
+    ],
+    "timestamp": "May/01/2020 02:31"
+  },
   "CF78670963": {
     "contest_id": 1348,
     "language": "GNU C++17",
