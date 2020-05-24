@@ -895,6 +895,22 @@
     ],
     "timestamp": "Jan/08/2021 23:01"
   },
+  "CF81252508": {
+    "contest_id": 1360,
+    "language": "GNU C++17",
+    "path": "codeforces/1360/D.cpp",
+    "problem_index": "D",
+    "problem_name": "Buying Shovels",
+    "problem_url": "https://codeforces.com/contest/1360/problem/D",
+    "submission_id": "CF81252508",
+    "submission_url": "https://codeforces.com/contest/1360/submission/81252508",
+    "tags": [
+      "math",
+      "number theory",
+      "*1300"
+    ],
+    "timestamp": "May/24/2020 20:19"
+  },
   "CF81275563": {
     "contest_id": 1360,
     "language": "GNU C++17",
