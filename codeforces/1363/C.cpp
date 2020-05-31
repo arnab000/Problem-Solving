@@ -22,29 +22,8 @@ struct Compare {
     { return a.first < b.first || (a.first == b.first && a.second.first > b.second.first); }
  
 };
-vector<ll>adj[1001];ll s[1001];bool vis[1001];
- void dfs(long long n)
-{
 
- vis[n]=true;
-s[n]=1;
- 
-for(long long i=0;i<adj[n].size();i++)
-{
-long long v=adj[n][i];
-if(!vis[v])
-{
-vis[v]=true;
 
- 
-dfs(v);
-s[n]+=s[v];
- 
-}
- 
-}
- 
-}
 
 int main()
 {
@@ -54,20 +33,8 @@ int main()
     {ll n,k;
     cin>>n>>k;
    
-     for(ll i=0;i<=n;i++)
-     {
-         adj[i].clear();
-     }
-     for(ll i=0;i<=n;i++)
-     {
-         vis[i]=false;
-     }
-     for(ll i=0;i<=n;i++)
-     {
-         s[i]=0;
-     }
-
-
+       vector<ll>adj[n+5];
+     
        for(ll i=0;i<n-1;i++)
        {
            ll u,v;
@@ -76,16 +43,14 @@ int main()
            adj[u].push_back(v);
            adj[v].push_back(u);
        }
-        dfs(k);
-      ll son=s[k]-1;
-   
        if(adj[k].size()==1 || adj[k].size()==0)
        {
            cout<<"Ayush"<<endl;
            continue;
        }
+
+      ll son=n-1;
      
-      
       if(son%2==0)
        {
            cout<<"Ashish"<<endl;
