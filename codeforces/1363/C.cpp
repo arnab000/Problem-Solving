@@ -25,7 +25,7 @@ struct Compare {
 vector<ll>adj[1001];ll s[1001];bool vis[1001];
  void dfs(long long n)
 {
- 
+
  vis[n]=true;
 s[n]=1;
  
@@ -35,7 +35,7 @@ long long v=adj[n][i];
 if(!vis[v])
 {
 vis[v]=true;
- 
+
  
 dfs(v);
 s[n]+=s[v];
@@ -45,7 +45,7 @@ s[n]+=s[v];
 }
  
 }
- 
+
 int main()
 {
     ll test;
@@ -66,13 +66,13 @@ int main()
      {
          s[i]=0;
      }
- 
- 
+
+
        for(ll i=0;i<n-1;i++)
        {
            ll u,v;
            cin>>u>>v;
- 
+
            adj[u].push_back(v);
            adj[v].push_back(u);
        }
@@ -95,11 +95,17 @@ int main()
          cout<<"Ayush"<<endl;
        }
        
- 
+
     }
     
- 
- 
+
+
   }
- 
- 
+
+
+
+   
+      
+    
+        
+
