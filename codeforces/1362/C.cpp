@@ -26,17 +26,31 @@ struct Compare {
 
 int main()
 {
-    Fast
     ll test;
     cin>>test;
     while(test--)
     {
-     ll n;;
-     cin>>n;
-     cout<<2*n-__builtin_popcountll(n)<<endl;
-        
-    
-        
+        ll n;
+        cin>>n;
+        ll sum=0;
+        if(n%2)
+        sum+=(n/2)+1;
+        else
+        sum+=(n/2);
+        ll jog=2;
+        for(ll shit=2;shit<=n;shit*=2)
+        {
+            sum+=jog;
+            jog++;
+        }
+        //cout<<sum<<endl;
+        ll extra=2;
+        for(ll shit=4;shit<=n;shit*=2)
+        {
+            sum+=(((n-(shit/2))/(shit))*extra);
+            extra++;
+        }
+        cout<<sum<<endl;
     }
     
 
