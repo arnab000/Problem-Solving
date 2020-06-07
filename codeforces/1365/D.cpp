@@ -5,7 +5,7 @@ using namespace std;
 #define f first
 #define s second
 #define Fast ios_base::sync_with_stdio(false);cin.tie(NULL);
-//#define fo(a,b,c) for(int i=a;i<b;i+=c)  
+#define fo(a,b,c) for(int i=a;i<b;i+=c)  
 typedef pair<ll , pair<ll, ll> > pi;
 int pow(int x,int y){
     int res=1;
