@@ -69,9 +69,9 @@ int main()
     {
         ll k;
         cin >> k;
-     
-        ll o=k;
-        if(prime[k]==1)
+        sura.push_back(k);
+        ll o=sura[i];
+        if(prime[sura[i]]==1)
         {
                ans.push_back({-1, -1});
                continue;
