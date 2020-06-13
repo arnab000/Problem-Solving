@@ -46,13 +46,20 @@ void SieveOfEratosthenes()
         if (prime[p] == 1)
         {
 
-            for (ll i =p+p ; i <= mx; i += p){
+            for (ll i =p+p ; i <= mx; i += p)
                 prime[i] *=p ;
-                 prime2[i] =p ;
-            }
         }
     }
-    
+     for (ll p = 2; p *p <= mx; p++)
+    {
+
+        if (prime[p] == 1)
+        {
+
+            for (ll i =p*p ; i <= mx; i += p)
+                prime2[i] =p ;
+        }
+    }
     
 }
 
