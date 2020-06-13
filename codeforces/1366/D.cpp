@@ -63,13 +63,16 @@ int main()
         ll n;
     cin >> n;
     vector<ll> sura;
-   
-    vector<pair<ll, ll>> ans;
+    
     for (ll i = 0; i < n; i++)
     {
         ll k;
         cin >> k;
         sura.push_back(k);
+    }
+    vector<pair<ll, ll>> ans;
+    for (ll i = 0; i < n; i++)
+    {
         ll o=sura[i];
         if(prime[sura[i]]==1)
         {
