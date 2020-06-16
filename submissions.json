@@ -895,6 +895,21 @@
     ],
     "timestamp": "Jan/08/2021 23:01"
   },
+  "CF83885072": {
+    "contest_id": 1199,
+    "language": "PyPy 3",
+    "path": "codeforces/1199/A.py",
+    "problem_index": "A",
+    "problem_name": "City Day",
+    "problem_url": "https://codeforces.com/contest/1199/problem/A",
+    "submission_id": "CF83885072",
+    "submission_url": "https://codeforces.com/contest/1199/submission/83885072",
+    "tags": [
+      "implementation",
+      "*1000"
+    ],
+    "timestamp": "Jun/16/2020 08:26"
+  },
   "CF83885835": {
     "contest_id": 1199,
     "language": "PyPy 3",
