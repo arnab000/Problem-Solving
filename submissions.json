@@ -895,6 +895,22 @@
     ],
     "timestamp": "Jan/08/2021 23:01"
   },
+  "CF83885835": {
+    "contest_id": 1199,
+    "language": "PyPy 3",
+    "path": "codeforces/1199/B.py",
+    "problem_index": "B",
+    "problem_name": "Water Lily",
+    "problem_url": "https://codeforces.com/contest/1199/problem/B",
+    "submission_id": "CF83885835",
+    "submission_url": "https://codeforces.com/contest/1199/submission/83885835",
+    "tags": [
+      "geometry",
+      "math",
+      "*1000"
+    ],
+    "timestamp": "Jun/16/2020 08:51"
+  },
   "CF83924178": {
     "contest_id": 1350,
     "language": "GNU C++14",
