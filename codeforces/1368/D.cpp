@@ -41,10 +41,10 @@ int main()
          arr[u]++;
          k/=2;
          u++;
-     
- 
+         //cout<<u<<endl;
+
      }
- 
+
  }
  for(ll i=0;i<25;i++)
  {
@@ -52,7 +52,7 @@ int main()
      for( ll j=0;j<arr[i];j++)
      {
          ans[j]+=po(2,i);
- 
+
      }
  }
  ll out=0;
@@ -62,8 +62,9 @@ int main()
    out+=(ans[i]*ans[i]);
  }
  cout<<out<<endl;
- 
- 
+
+
  
 }
+ 
  
