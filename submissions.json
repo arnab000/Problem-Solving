@@ -895,6 +895,23 @@
     ],
     "timestamp": "Jan/08/2021 23:01"
   },
+  "CF84684979": {
+    "contest_id": 460,
+    "language": "GNU C++17",
+    "path": "codeforces/460/C.cpp",
+    "problem_index": "C",
+    "problem_name": "Present",
+    "problem_url": "https://codeforces.com/contest/460/problem/C",
+    "submission_id": "CF84684979",
+    "submission_url": "https://codeforces.com/contest/460/submission/84684979",
+    "tags": [
+      "binary search",
+      "data structures",
+      "greedy",
+      "*1700"
+    ],
+    "timestamp": "Jun/22/2020 22:45"
+  },
   "CF84721698": {
     "contest_id": 271,
     "language": "GNU C++17",
