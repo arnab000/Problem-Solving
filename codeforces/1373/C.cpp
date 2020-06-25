@@ -33,7 +33,7 @@ int main()
        string s;
        cin>>s;
        ll curr=0;
-        ll b=0;
+       map<ll,bool>b;
        ll ans=0;
        for(ll i=0;i<s.size();i++)
        {
@@ -45,10 +45,10 @@ int main()
            curr++;
            if(curr<0)
            { 
-               if(b>curr){
+               if(!b[(-1)*(curr)]){
 
              ans+=(i+1);
-             b=curr;
+             b[(-1)*(curr)]=true;
              //cout<<ans<<endl;
            }
            }
