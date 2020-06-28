@@ -16,7 +16,12 @@ int pow(int x,int y){
     }
     return res;
 }   
-
+struct Compare {
+    constexpr bool operator()(pi const & a,
+                              pi const & b) const noexcept
+    { return a.first < b.first || (a.first == b.first && a.second.first > b.second.first); }
+ 
+};
 void prefix_function( string s,ll arr[] )
 {
     
@@ -41,11 +46,11 @@ void prefix_function( string s,ll arr[] )
       
     }
     
- 
+
 }
- 
- 
- 
+
+
+
 int main()
 {
  ll test;
@@ -61,9 +66,16 @@ int main()
   if(ans>n)
   ans=(d-1)*x+y;
   cout<<ans<<endl;
- 
+
  }
- 
- 
+
+
 }
- 
+
+
+
+   
+      
+    
+        
+
