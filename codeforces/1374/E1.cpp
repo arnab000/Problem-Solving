@@ -6,7 +6,7 @@ using namespace std;
 #define s second
 #define Fast ios_base::sync_with_stdio(false);cin.tie(NULL);
 #define fo(a,b,c) for(int i=a;i<b;i+=c)  
-typedef pair<ll , pair<ll, ll> > pi;
+typedef pair<int, int> pi;
 int pow(int x,int y){
     int res=1;
     while(y){
@@ -16,12 +16,7 @@ int pow(int x,int y){
     }
     return res;
 }   
-struct Compare {
-    constexpr bool operator()(pi const & a,
-                              pi const & b) const noexcept
-    { return a.first < b.first || (a.first == b.first && a.second.first > b.second.first); }
- 
-};
+
 void prefix_function( string s,ll arr[] )
 {
     
@@ -53,41 +48,74 @@ void prefix_function( string s,ll arr[] )
 
 int main()
 {
-    Fast
-   ll n,k;
-   cin>>n>>k;
-   vector<ll>both,one,two;
-   for(ll i=0;i<n;i++)
-   {
-       ll t,u,v;
-       cin>>t>>u>>v;
-       if(u==1 && v==1)
-       both.push_back(t);
-       else if(u==1)
-       one.push_back(t);
-       else if(v==1)
-       two.push_back(t);
-   }
-   sort(one.begin(),one.end());
-   sort(two.begin(),two.end());
-   for(ll i=0;i<min(one.size(),two.size());i++)
-   {
-       both.push_back(one[i]+two[i]);
-   }
-   if(both.size()<k)
-   cout<<-1<<endl;
-   else
-   {
-       sort(both.begin(),both.end());
-       ll ans=0;
-       for(ll i=0;i<k;i++)
-       {
-           ans+=both[i];
-       }
-       cout<<ans<<endl;
-   }
-   
-
+ 
+        int n, k;
+        cin >> n >> k;
+        vector<pair<ll, pi> > hbe;
+        for(int i=0; i<n; i++){
+            int a, b;
+            ll tt;
+            cin >> tt >> a >> b;
+            hbe.push_back({tt, {a, b}});
+        }
+        sort(hbe.begin(), hbe.end());
+        queue<ll> both, ali, bob;
+        for(int i=0; i<n; i++){
+            if(hbe[i].second.first && hbe[i].second.second){
+                both.push(hbe[i].first);
+            }
+            else if(hbe[i].second.first){
+                ali.push(hbe[i].first);
+            }
+            else if(hbe[i].second.second){
+                bob.push(hbe[i].first);
+            }
+        }
+        ll ans = 0;
+        int sura = 0;
+        bool kutta = false;
+        while(1){
+            if(sura == k) break;
+            ll a, b;
+            if(both.empty() && (ali.empty() || bob.empty())){
+                kutta = true;
+                break;
+            }
+            else if(both.empty()){
+                b = ali.front();
+                b += bob.front();
+                ans += b;
+                ali.pop();
+                bob.pop();
+                sura++;
+            }
+            else if(ali.empty() || bob.empty()){
+                ans += both.front();
+                both.pop();
+                sura++;
+            }
+            else{
+                a = both.front();
+                b = ali.front();
+                b += bob.front();
+                if(a < b){
+                    ans += a;
+                    both.pop();
+                }
+                else{
+                    ans += b;
+                    ali.pop();
+                    bob.pop();
+                }
+                sura++;
+            }
+        }
+        if(kutta){
+            printf("-1\n");
+        }
+        else{
+            cout << ans << "\n";
+        }
 
 }
 
