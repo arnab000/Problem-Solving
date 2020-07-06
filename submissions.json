@@ -895,6 +895,22 @@
     ],
     "timestamp": "Jan/08/2021 23:01"
   },
+  "CF86140210": {
+    "contest_id": 923,
+    "language": "GNU C++17",
+    "path": "codeforces/923/A.cpp",
+    "problem_index": "A",
+    "problem_name": "Primal Sport",
+    "problem_url": "https://codeforces.com/contest/923/problem/A",
+    "submission_id": "CF86140210",
+    "submission_url": "https://codeforces.com/contest/923/submission/86140210",
+    "tags": [
+      "math",
+      "number theory",
+      "*1700"
+    ],
+    "timestamp": "Jul/06/2020 21:56"
+  },
   "CF86163472": {
     "contest_id": 861,
     "language": "GNU C++17",
