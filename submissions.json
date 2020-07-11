@@ -895,6 +895,18 @@
     ],
     "timestamp": "Jan/08/2021 23:01"
   },
+  "CF86585947": {
+    "contest_id": 1372,
+    "language": "GNU C++17",
+    "path": "codeforces/1372/C.cpp",
+    "problem_index": "C",
+    "problem_name": "Omkar and Baseball",
+    "problem_url": "https://codeforces.com/contest/1372/problem/C",
+    "submission_id": "CF86585947",
+    "submission_url": "https://codeforces.com/contest/1372/submission/86585947",
+    "tags": [],
+    "timestamp": "Jul/11/2020 22:49"
+  },
   "CF86612423": {
     "contest_id": 1372,
     "language": "GNU C++17",

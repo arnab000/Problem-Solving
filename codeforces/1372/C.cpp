@@ -70,8 +70,21 @@ int main()
        s+='#';
 
      }
-   
-  
+     set<char>ch;
+     for(ll i=0;i<s.size();i++)
+     {
+         ch.insert(s[i]);
+     }
+     if(ch.size()==1 && s[0]=='*')
+     {
+         cout<<0<<endl;
+         continue;
+     }
+     if(ch.size()==1 && s[0]=='#')
+     {
+         cout<<1<<endl;
+         continue;
+     }
      ll a=0;
      for(ll i=0;i<s.size();i++)
      {
@@ -84,9 +97,7 @@ int main()
            }
        }
      }
-     if(a==0)
-     cout<<0<<endl;
-     else if(a==1)
+     if(a==1)
      cout<<1<<endl;
      else
      {
