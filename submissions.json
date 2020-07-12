@@ -895,6 +895,22 @@
     ],
     "timestamp": "Jan/08/2021 23:01"
   },
+  "CF86673034": {
+    "contest_id": 1380,
+    "language": "GNU C++17",
+    "path": "codeforces/1380/A.cpp",
+    "problem_index": "A",
+    "problem_name": "Three Indices",
+    "problem_url": "https://codeforces.com/contest/1380/problem/A",
+    "submission_id": "CF86673034",
+    "submission_url": "https://codeforces.com/contest/1380/submission/86673034",
+    "tags": [
+      "brute force",
+      "data structures",
+      "*900"
+    ],
+    "timestamp": "Jul/12/2020 21:30"
+  },
   "CF86680959": {
     "contest_id": 1380,
     "language": "GNU C++17",
