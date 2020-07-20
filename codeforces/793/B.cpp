@@ -46,7 +46,7 @@ void prefix_function( string s,ll arr[] )
       
     }
     
- 
+
 }
 char grid[1001][1001];
 ll n,m,el,er;
@@ -104,8 +104,8 @@ vis2[{x,y}]=cou;
     
     }
 }
- 
- 
+
+
 int main()
 {
  Fast
@@ -119,7 +119,7 @@ int main()
          if(grid[i][j]=='S')
          {
             sl=i,sr=j;
- 
+
          }
          if(grid[i][j]=='T')
          {
@@ -136,9 +136,14 @@ int main()
      cout<<"NO"<<endl;
  }
  
- 
- 
+
+
 }
- 
- 
- 
+
+
+
+   
+      
+    
+        
+
