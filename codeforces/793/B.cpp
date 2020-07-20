@@ -54,11 +54,6 @@ map<pair<ll,ll>,bool> vis;map<pair<ll,ll>,bool> vis2;
 void dfs(ll x, ll y,char a, ll cou)
 { if( vis[{x,y}] && cou>vis2[{x,y}])
 return;
-if(vis[{el,er}])
-{
-    cout<<"YES"<<endl;
-    exit(0);
-}
     if(x<0 || y<0 || x>=n || y>=m)
     return;
 if(grid[x][y]=='*')
