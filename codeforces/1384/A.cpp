@@ -59,26 +59,60 @@ int main()
  {
      ll n;
      cin>>n;
-   
-     string s;
-     
-     for(ll i=0;i<=51;i++)
+     vector<ll>sura;
+     ll last=-1;
+     for(ll i=0;i<n;i++)
      {
-        s+='a';
+         ll k;
+         cin>>k;
+         sura.push_back(k);
      }
-     cout<<s<<endl;
-     while(n--)
+     sura.push_back(-1);
+     char a='a';
+     string prev;
+     for(ll j=0;j<max(sura[0],100ll);j++)
      {
-         ll u;
-         
-         cin>>u;
-         
-         s[u]++;
-         if(s[u]>'z')
-         s[u]='a';
-         cout<<s<<endl;
-
+        prev+='a';
+        cout<<'a';
      }
+     cout<<endl;
+     for(ll i=1;i<=n;i++)
+     {
+         
+        // cout<<a<<endl;
+               if(sura[i-1]==0)
+             {
+                 a++;
+             if(a>'z')
+             a='a';
+             string prev1=prev;
+             prev.clear();
+             for(ll j=0;j<100;j++)
+             {
+                 prev+=a;
+             }
+              cout<<prev<<endl;
+              continue;
+             }
+             
+           
+        
+             string prev1=prev;
+             prev.clear();
+             if(sura[i]>sura[i-1])
+             a++;
+             if(a>'z')
+             a='a';
+             for(ll j=0;j<sura[i-1];j++)
+             {
+                 prev+=prev1[j];
+             }
+             for(ll j=sura[i-1];j<sura[i];j++)
+             {
+                 prev+=a;
+             }
+             cout<<prev<<endl;
+            
         
 
 
@@ -87,7 +121,7 @@ int main()
  }
 
 
-
+}
 
 
 
