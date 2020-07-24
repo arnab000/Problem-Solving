@@ -22,10 +22,35 @@ struct Compare {
     { return a.first < b.first || (a.first == b.first && a.second.first > b.second.first); }
  
 };
+void prefix_function( string s,ll arr[] )
+{
+    
+   
+    long long border=0;
+    arr[0]=0;
+    for(long long i=1;i<s.size();i++)
+    {
+      while(border>0 && s[i]!=s[border])
+      {
+          border=arr[border-1];
+      }
+      if(s[i]==s[border])
+      {
+          border++;
+      }
+      else
+      {
+          border=0;
+      }
+      arr[i]=border;
+      
+    }
+    
 
+}
 ll arr[27];
 ll sz[27];
- 
+
 void dsu()
 {
     for(ll i=0;i<=26;i++)
@@ -69,7 +94,7 @@ ll merge(ll x,ll y)
     
     
 }
- 
+
 int main()
 {
  ll test;
@@ -97,14 +122,21 @@ int main()
          if(b[i]==a[i])
         continue;
         ans+=merge(a[i]-'a',b[i]-'a');
- 
+
         
      }
      cout<<ans<<endl;
     
- 
+
  }
- 
- 
+
+
 }
- 
+
+
+
+   
+      
+    
+        
+
