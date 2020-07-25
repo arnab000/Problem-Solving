@@ -12436,6 +12436,23 @@
     ],
     "timestamp": "Jul/19/2020 18:01"
   },
+  "CF87967577": {
+    "contest_id": 1279,
+    "language": "GNU C++17",
+    "path": "codeforces/1279/C.cpp",
+    "platform": "Codeforces",
+    "problem_index": "C",
+    "problem_name": "Stack of Presents",
+    "problem_url": "https://codeforces.com/contest/1279/problem/C",
+    "submission_id": "CF87967577",
+    "submission_url": "https://codeforces.com/contest/1279/submission/87967577",
+    "tags": [
+      "data structures",
+      "implementation",
+      "*1400"
+    ],
+    "timestamp": "Jul/25/2020 13:34"
+  },
   "CF88052120": {
     "contest_id": 1384,
     "language": "GNU C++17",
