@@ -49,14 +49,16 @@ void prefix_function( string s,ll arr[] )
 
 }
 ll mod=998244353;
-ll add( ll a , ll b)
-{
-    return (((a%mod)+(b%mod))%mod);
+ll add(ll a, ll b) {
+	a += b;
+	if (a >= mod) a -= mod;
+	return a;
 }
-ll mul(ll a,ll b)
-{
-  return (((a%mod)*(b%mod))%mod);
+
+ll mul(ll a, ll b) {
+	return a * 1ll * b % mod;
 }
+
 ll binpow(ll a, ll b) {
 	ll res = 1;
 	while (b) {
@@ -68,10 +70,8 @@ ll binpow(ll a, ll b) {
 }
 
 
-
 int main()
 {
-    Fast
  ll test;
  cin>>test;
  map<ll,ll>sura;
@@ -87,7 +87,7 @@ int main()
          cin>>k;
          sura2[k]++;
          sura[k]=add(sura[k],mul(binpow(n,mod-2),binpow(test,mod-2)));
-
+         
 
      }
 
@@ -96,6 +96,8 @@ int main()
  auto it2=sura.begin();
  for(auto it=sura2.begin();it!=sura2.end();it++)
  {
+
+     
      ans=add(ans,mul(it2->second,mul(it->second,binpow(test,mod-2))));
      it2++;
  }
