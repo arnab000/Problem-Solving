@@ -12436,6 +12436,25 @@
     ],
     "timestamp": "Jul/19/2020 18:01"
   },
+  "CF88894687": {
+    "contest_id": 1384,
+    "language": "GNU C++17",
+    "path": "codeforces/1384/D.cpp",
+    "platform": "Codeforces",
+    "problem_index": "D",
+    "problem_name": "GameGame",
+    "problem_url": "https://codeforces.com/contest/1384/problem/D",
+    "submission_id": "CF88894687",
+    "submission_url": "https://codeforces.com/contest/1384/submission/88894687",
+    "tags": [
+      "bitmasks",
+      "constructive algorithms",
+      "games",
+      "math",
+      "*1900"
+    ],
+    "timestamp": "Aug/04/2020 23:54"
+  },
   "CF88966705": {
     "contest_id": 1399,
     "language": "GNU C++17",
