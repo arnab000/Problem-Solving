@@ -101,21 +101,19 @@ ll merge(ll x,ll y)
 }
 ll arr[100005];
  ll n;
+ vector<ll>s;
 bool solve(ll x)
 {
     bool hbe=true;
-   vector<ll>s;
-   for (ll i = 1; i <=n; i++)
-   {
-       s.push_back(arr[i]);
-   }
-   sort(s.rbegin(),s.rend());
+   
+  
    ll t=n;
+  
    for(ll i=0;i<n;i++)
    {
-       if(s[i]==0 || s[i]==1)
-       break;
+     
        ll y=s[i]+(x*(s[i]-1));
+      // cout<<y<<endl;
        if(y>t)
        hbe=false;
        t--;
@@ -126,11 +124,12 @@ bool solve(ll x)
 
 int main()
 {
+    Fast
  ll test;
  cin>>test;
  while(test--)
  {
-    
+    s.clear();
      cin>>n;
      for(ll i=0;i<=n;i++)
      {
@@ -144,14 +143,14 @@ int main()
          cin>>k;
          arr[k]++;
          mx=max(arr[k],mx);
-
      }
+     for (ll i = 1; i <=n; i++)
+   {
+       s.push_back(arr[i]);
+   }
+   sort(s.rbegin(),s.rend());
      //cout<<mx<<endl;
-     if(mx==1)
-     {
-         cout<<n<<endl;
-         continue;
-     }
+  
      ll l=1,r=200005;
      ll ans=0;
      while (r>=l)
