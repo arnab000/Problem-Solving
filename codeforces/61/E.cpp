@@ -144,7 +144,6 @@ ll get_sum2(ll x)
 
 int main()
 {
- Fast;
  ll n;
  cin>>n;
  vector<ll>sura;
