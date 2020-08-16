@@ -895,6 +895,22 @@
     ],
     "timestamp": "Jan/08/2021 23:01"
   },
+  "CF90110483": {
+    "contest_id": 1392,
+    "language": "GNU C++17",
+    "path": "codeforces/1392/B.cpp",
+    "problem_index": "B",
+    "problem_name": "Omkar and Infinity Clock",
+    "problem_url": "https://codeforces.com/contest/1392/problem/B",
+    "submission_id": "CF90110483",
+    "submission_url": "https://codeforces.com/contest/1392/submission/90110483",
+    "tags": [
+      "implementation",
+      "math",
+      "*800"
+    ],
+    "timestamp": "Aug/16/2020 21:01"
+  },
   "CF90137513": {
     "contest_id": 1392,
     "language": "GNU C++17",
