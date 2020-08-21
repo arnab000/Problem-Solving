@@ -131,7 +131,22 @@ int main()
            break;
        }
    }
- 
+   if(hbe && baal==0)
+   {
+      cout<<"YES"<<endl;
+      continue;
+   }
+   if(hbe)
+   {
+       for(ll i=2;i*i<=mn;i++)
+       {
+           if(mn%i==0)
+           {
+               hbe=false;
+               break;
+           }
+       }
+   }
    if(hbe)
    cout<<"YES"<<endl;
    else
