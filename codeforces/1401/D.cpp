@@ -139,7 +139,7 @@ int main()
    
      while(prime.size()>n-1)
      {
-        ll x=prime[0];
+        auto x=*(prime.begin());
         prime.erase(prime.begin());
         prime[0]=mul(prime[0],x);
     
