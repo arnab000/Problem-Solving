@@ -37,21 +37,21 @@ void dijkstra(ll x,ll y)
     {
        pair<ll,pair<ll,ll>> u=pq.top();
         pq.pop();
-        vis[u.s.f][u.s.s]=true;
+        vis[u.second.first][u.second.second]=true;
       
-        if(dist[u.s.f][u.s.s]<u.f)
+        if(dist[u.second.first][u.second.second]<u.first)
         continue;
-        for(ll i=0;i<adj[u.s.f][u.s.s].size();i++)
+        for(ll i=0;i<adj[u.second.first][u.second.second].size();i++)
         {
-           pair<pair<ll,ll>,ll> v=adj[u.s.f][u.s.s][i];
-            if(vis[v.f.f][v.f.s])
+           pair<pair<ll,ll>,ll> v=adj[u.second.first][u.second.second][i];
+            if(vis[v.first.first][v.first.second])
             continue;
-            ll new_dist=dist[u.s.f][u.s.s]+v.s;
-            if(new_dist<dist[v.f.f][v.f.s])
+            ll new_dist=dist[u.second.first][u.second.second]+v.second;
+            if(new_dist<dist[v.first.first][v.first.second])
             {
-                dist[v.f.f][v.f.s]=new_dist;
+                dist[v.first.first][v.first.second]=new_dist;
               
-                pq.push({new_dist,{v.f.f,v.f.s}});
+                pq.push({new_dist,{v.first.first,v.first.second}});
             }
  
         }
@@ -61,7 +61,6 @@ void dijkstra(ll x,ll y)
 
 int main()
 {
-    Fast
     ll h,w;
     ll start1,start2;
     ll end1,end2;
@@ -88,9 +87,19 @@ int main()
                 {
                     if(k==i && r==j )
                     continue;
-                    else if(abs(k-i)+abs(r-j)==1 &&(k>=0 && k<h)&& (r>=0 && r<w) && sura[k][r]!='#')
+                    else if(k==i-1 && r==j &&(k>=0 && k<h)&& (r>=0 && r<w) && sura[k][r]!='#')
                     adj[i][j].push_back({{k,r},0});
-                    else if((k>=0 && k<h)&& (r>=0 && r<w) && sura[k][r]!='#')
+
+                   else if(k==i && r==j-1  && (k>=0 && k<h)&& (r>=0 && r<w) && sura[k][r]!='#')
+                    adj[i][j].push_back({{k,r},0});
+
+                   else if(k==i+1 && r==j  && (k>=0 && k<h)&& (r>=0 && r<w) && sura[k][r]!='#')
+                     adj[i][j].push_back({{k,r},0});
+
+                  else if(k==i && r==j+1 && (k>=0 && k<h)&& (r>=0 && r<w) && sura[k][r]!='#')
+                     adj[i][j].push_back({{k,r},0});
+
+                   else if((k>=0 && k<h)&& (r>=0 && r<w) && sura[k][r]!='#')
                     {
                         adj[i][j].push_back({{k,r},1});
                     }
@@ -105,11 +114,11 @@ int main()
     
     if(vis[end1-1][end2-1])
     {
-        cout<<dist[end1-1][end2-1]<<'\n';
+        cout<<dist[end1-1][end2-1]<<endl;
     }
     else
     {
-        cout<<-1<<'\n';
+        cout<<-1<<endl;
     }
     
 
