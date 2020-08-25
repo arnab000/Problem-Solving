@@ -895,6 +895,24 @@
     ],
     "timestamp": "Jan/08/2021 23:01"
   },
+  "CF91003517": {
+    "contest_id": 1400,
+    "language": "GNU C++17",
+    "path": "codeforces/1400/E.cpp",
+    "problem_index": "E",
+    "problem_name": "Clear the Multiset",
+    "problem_url": "https://codeforces.com/contest/1400/problem/E",
+    "submission_id": "CF91003517",
+    "submission_url": "https://codeforces.com/contest/1400/submission/91003517",
+    "tags": [
+      "data structures",
+      "divide and conquer",
+      "dp",
+      "greedy",
+      "*2200"
+    ],
+    "timestamp": "Aug/26/2020 03:16"
+  },
   "CF91003799": {
     "contest_id": 1400,
     "language": "GNU C++17",
