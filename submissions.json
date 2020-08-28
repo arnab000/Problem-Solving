@@ -895,6 +895,23 @@
     ],
     "timestamp": "Jan/08/2021 23:01"
   },
+  "CF91214342": {
+    "contest_id": 1023,
+    "language": "GNU C++17",
+    "path": "codeforces/1023/A.cpp",
+    "problem_index": "A",
+    "problem_name": "Single Wildcard Pattern Matching",
+    "problem_url": "https://codeforces.com/contest/1023/problem/A",
+    "submission_id": "CF91214342",
+    "submission_url": "https://codeforces.com/contest/1023/submission/91214342",
+    "tags": [
+      "brute force",
+      "implementation",
+      "strings",
+      "*1200"
+    ],
+    "timestamp": "Aug/28/2020 19:57"
+  },
   "CF91356934": {
     "contest_id": 1397,
     "language": "GNU C++17",
