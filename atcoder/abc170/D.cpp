@@ -100,19 +100,19 @@ ll merge(ll x,ll y)
     return 1ll;
 }
 
-ll cou[1000006];
+
 int main()
 {
     Fast
  ll n;
  cin>>n;
-
+ unordered_map<ll,ll>count;
  vector<ll>sura;
  for(ll i=0;i<n;i++)
  {
      ll k;
      cin>>k;
-     cou[k]++;
+     count[k]++;
      sura.push_back(k);
 
  }
@@ -135,16 +135,16 @@ int main()
                 
 
                       if(x==j)
-                    y-=cou[j]-1;
+                    y-=count[j]-1;
                     else
                     {
-                          y-=cou[j];
+                          y-=count[j];
                     }
                      if(x==x/j)
-                    y-=cou[x/j]-1;
+                    y-=count[x/j]-1;
                     else
                     {
-                          y-=cou[x/j];
+                          y-=count[x/j];
                     }
                       
                 
@@ -152,10 +152,10 @@ int main()
             else
             {
                   if(x==j)
-                    y-=cou[j]-1;
+                    y-=count[j]-1;
                     else
                     {
-                          y-=cou[j];
+                          y-=count[j];
                     }
             }
             
