@@ -56,7 +56,49 @@ ll binpow(ll a, ll b) {
     }
     return res;
 }
-
+ll dsu_arr[100000];
+ll dsu_sz[100000];
+void dsu(ll n)
+{
+    for(ll i=0;i<=n;i++)
+    {
+        dsu_arr[i]=i;
+        dsu_sz[i]=1;
+    }
+}
+ll find(ll x)
+{
+     ll root=x;
+    while (root!=dsu_arr[root])
+    {
+        root=dsu_arr[root];
+    }
+    while(x!=dsu_arr[x])
+    {
+        dsu_arr[x]=root;
+        x=dsu_arr[x];
+    }
+    return root;
+}
+ll merge(ll x,ll y)
+{
+    ll root1=find(x);
+    ll root2=find(y);
+    
+    if(root1==root2)
+    return 0ll;
+ 
+    if(dsu_sz[x]>dsu_sz[y]){
+    dsu_arr[root2]=root1;
+    dsu_sz[x]+=dsu_sz[y];
+    }
+    else
+    {
+         dsu_sz[y]+=dsu_sz[x];
+        dsu_arr[root1]=root2;
+    }
+    return 1ll;
+}
 
 
 int main()
