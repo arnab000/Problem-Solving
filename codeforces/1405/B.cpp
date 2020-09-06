@@ -65,6 +65,78 @@ ll subs(ll a,ll b)
 }
 
 
+ll dsu_arr[100000];
+ll dsu_sz[100000];
+void dsu(ll n)
+{
+    for(ll i=0;i<=n;i++)
+    {
+        dsu_arr[i]=i;
+        dsu_sz[i]=1;
+    }
+}
+ll find(ll x)
+{
+     ll root=x;
+    while (root!=dsu_arr[root])
+    {
+        root=dsu_arr[root];
+    }
+    while(x!=dsu_arr[x])
+    {
+        dsu_arr[x]=root;
+        x=dsu_arr[x];
+    }
+    return root;
+}
+ll merge(ll x,ll y)
+{
+    ll root1=find(x);
+    ll root2=find(y);
+    
+    if(root1==root2)
+    return 0ll;
+ 
+    if(dsu_sz[x]>dsu_sz[y]){
+    dsu_arr[root2]=root1;
+    dsu_sz[root1]+=dsu_sz[root2];
+    }
+    else
+    {
+         dsu_sz[root2]+=dsu_sz[root1];
+        dsu_arr[root1]=root2;
+    }
+    return 1ll;
+}
+/*
+vector<ll>adj[100005];
+bool vis[100005];
+ll dist[100005];
+void bfs(ll c)
+{
+  vis[c]=true;
+  dist[c]=0;
+  q.push(c);
+while(!q.empty())
+{
+    ll x=q.front();
+    q.pop();
+   
+    for(ll i=0;i<adj[x].size();i++)
+    {
+        ll y=adj[x][i];
+        if(!vis[y])
+        {
+            vis[y]=true;
+            dist[y]=dist[x]+1;
+            
+            q.push(y);
+        }
+    }
+ 
+}
+}
+*/
 
 int main()
 {
