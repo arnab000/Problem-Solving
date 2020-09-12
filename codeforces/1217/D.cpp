@@ -11,32 +11,34 @@ using namespace std;
 typedef pair<ll , pair<ll, ll> > pi;
 
 
-map<pair<ll,ll>,bool>ma;
+int ma[5050];
 
-vector<ll>adj[5005];
-bool vis[5005];
-bool processed[5005];
+vector<pair<ll,ll>>adj[5050];
+int vis[5050];
+int processed[5050];
 
-bool hbe=false;
+bool hbe;
 void bfs(ll c)
 {
- vis[c]=true;
+ vis[c]=1;
  for(ll i=0;i<adj[c].size();i++)
  {
-     ll u=adj[c][i];
-     if(vis[u] && !processed[u])
+     ll u=adj[c][i].first;
+     if(vis[u]==1 && processed[u]==0)
      {
          
-         ma[{c,u}]=true;
+        ma[adj[c][i].second]=1;
          hbe=true;
+         
      }
      else if(!vis[u])
      {
+         vis[u]=1;
          bfs(u);
      }
      
  }
- processed[c]=true;
+ processed[c]=1;
 }
 
 
@@ -45,13 +47,13 @@ int main()
     Fast
     ll n,m;
     cin>>n>>m;
-    vector<pair<ll,ll>>sura;
+
     for(ll i=0;i<m;i++)
     {
         ll u,v;
         cin>>u>>v;
-        adj[u].push_back(v);
-        sura.push_back({u,v});
+        adj[u].push_back({v,i});
+       
         
     }
     for(ll i=1;i<=n;i++)
@@ -75,7 +77,7 @@ int main()
         cout<<2<<endl;
         for(ll i=0;i<m;i++)
         {
-            if(ma[sura[i]])
+            if(ma[i]==1)
             {
                 cout<<2<<" ";
             }
