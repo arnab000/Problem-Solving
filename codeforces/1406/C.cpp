@@ -144,30 +144,34 @@ while(!q.empty())
 vector<ll>adj[100005];
 bool vis[100005];
 ll sz[100005];
-vector<ll>cent;
 
-void centroid(ll x,ll n)
+ll parent[100005];
+
+void centroid(ll x)
 {
     vis[x]=true;
   sz[x]=1;
-  bool is_cent=true;
+ 
   for(ll i=0;i<adj[x].size();i++)
   {
       ll u=adj[x][i];
       if(!vis[u])
       {
-         centroid(u,n);
+
+          parent[u]=x;
+         centroid(u);
          sz[x]+=sz[u];
-         if(sz[u]>n/2)
-         is_cent=false;
+         
+        
+        
+        
       }
+      
      
-    
+      
   }
-   if(n-sz[x]>n/2)
-      is_cent=false;
-    if(is_cent)
-      cent.push_back(x);
+
+ 
 
 
 }
@@ -180,15 +184,15 @@ int main()
  while(test--)
  {
      ll n;
-        cin>>n;
+       cin>>n;
      for(ll i=0;i<=n;i++)
      {
          vis[i]=false;
          sz[i]=0;
          adj[i].clear();
      }
-     cent.clear();
-
+     vector<ll>cent;
+ 
    vector<pair<ll,ll>>sura;
    for(ll i=0;i<n-1;i++)
    {
@@ -199,15 +203,51 @@ int main()
        adj[u].push_back(v);
        adj[v].push_back(u);
    }
-   centroid(1,n);
+   centroid(1);
+   ll ans=1000000000000,cnt=0;
+ for(ll i=1;i<=n;i++)
+ {
+     ll mx=0;
+    
+     for(ll j=0;j<adj[i].size();j++)
+     {
+         if(parent[i]==adj[i][j])
+         mx=max(mx,n-sz[i]);
+         else
+         {
+             mx=max(mx,sz[adj[i][j]]);
+         }
+         
+     }
+     
+     ans=min(mx,ans);
+
+ }
+ for(ll i=1;i<=n;i++)
+ {
+     ll mx=0;
+     for(ll j=0;j<adj[i].size();j++)
+     {
+         if(parent[i]==adj[i][j])
+         mx=max(mx,n-sz[i]);
+         else
+         {
+             mx=max(mx,sz[adj[i][j]]);
+         }
+         
+     }
+     if(mx==ans)
+     cent.push_back(i);
+
+ }
    if(cent.size()==1 )
    {
       
         for(ll i=0;i<sura.size();i++)
        {
            
-                cout<<sura[i].first<<" "<<sura[i].second<<"\n";
-            cout<<sura[i].first<<" "<<sura[i].second<<"\n";
+                cout<<sura[i].first<<" "<<sura[i].second<<endl;
+            cout<<sura[i].first<<" "<<sura[i].second<<endl;
                 break;
            
        }
@@ -220,7 +260,7 @@ int main()
        {
            if((sura[i].first==cent[1] || sura[i].second==cent[1]) && (sura[i].first!=cent[0] && sura[i].second!=cent[0]) )
            {
-                cout<<sura[i].first<<" "<<sura[i].second<<"\n";
+                cout<<sura[i].first<<" "<<sura[i].second<<endl;
                 m=sura[i].second;
                 p=sura[i].first;
                 break;
@@ -236,10 +276,10 @@ int main()
            
        }
        if(!baal)
-         cout<<cent[0]<<" "<<m<<"\n";
+         cout<<cent[0]<<" "<<m<<endl;
          else 
          {
-             cout<<cent[0]<<" "<<p<<"\n";
+             cout<<cent[0]<<" "<<p<<endl;
          }
  
    }
