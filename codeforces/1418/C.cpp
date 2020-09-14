@@ -146,7 +146,7 @@ ll dp[200005][2];
 ll arr[200005];
 ll solve(ll id, ll player)
 {
-    if(id>=n)
+    if(id==n)
     {
         return 0;
     }
