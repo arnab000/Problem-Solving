@@ -147,22 +147,39 @@ int main()
     Fast
  ll test;
  cin>>test;
+ vector< unsigned ll>dp;
+ unsigned ll f= 0;
+ ll j=1;
+ dp.push_back(1);
+ ll k=1;
+ for(ll i=3;;i+=k*2)
+ {
+    
+    
+     k*=2;
+         dp.push_back(dp[j-1]+((i*(i+1))/2));
+     
+     
+    j++;
+    
+if(j>35)
+     break;
+
+ }
+
+ //cout<<f<<endl;
  while(test--)
  {
      ll n;
      cin>>n;
-     ll i=2;
-     ll j=1;
-     ll cnt=0;
-     while(j<=n)
-     {//cout<<j<<endl;
-         cnt++;
-         i*=2;
-         i--;
-         j+=(i*(i+1))/2;
-         i++;
-     }
-     cout<<cnt<<endl;
+     auto it=lower_bound(dp.begin(),dp.end(),n);
+     //cout<<*it<<endl;
+     if(*it==n)
+     it++;
+     ll k=it-dp.begin();
+     cout<<k<<endl;
+     
+
  }
 
 
