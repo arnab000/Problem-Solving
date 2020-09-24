@@ -173,7 +173,7 @@ int main()
 
      }
      sura.push_back(0);
-     cout<<sum<<'\n';
+     cout<<sum<<endl;
      while(r--)
      {
          ll p,q;
@@ -182,26 +182,34 @@ int main()
          ll y=sura[q];
          if(abs(p-q)==1)
          {
-          sum-=max(0ll,sura[p]-sura[p-1]);
-          sum-=max(0ll,sura[p+1]-sura[p]);
+             sum-=max(0ll,sura[p]-sura[p-1]);
+         sum-=max(0ll,sura[p+1]-sura[p]);
           sum-=max(0ll,sura[q+1]-sura[q]);
           swap(sura[p],sura[q]);
-          sum+=max(0ll,sura[p]-sura[p-1]);
-          sum+=max(0ll,sura[p+1]-sura[p]);
+                    sum+=max(0ll,sura[p]-sura[p-1]);
+         sum+=max(0ll,sura[p+1]-sura[p]);
           sum+=max(0ll,sura[q+1]-sura[q]);
           cout<<sum<<endl;
           continue;
+
+
          }
+        
          sum-=max(0ll,sura[p]-sura[p-1]);
          sum-=max(0ll,sura[p+1]-sura[p]);
+
          sum-=max(0ll,sura[q]-sura[q-1]);
          sum-=max(0ll,sura[q+1]-sura[q]);
          sura[p]=y; sura[q]=x;
          sum+=max(0ll,sura[p]-sura[p-1]);
          sum+=max(0ll,sura[p+1]-sura[p]);
+
+   
+       
+         
          sum+=max(0ll,sura[q]-sura[q-1]);
          sum+=max(0ll,sura[q+1]-sura[q]);
-         cout<<sum<<'\n';
+         cout<<sum<<endl;
      }
  
  }
