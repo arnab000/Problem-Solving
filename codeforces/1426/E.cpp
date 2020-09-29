@@ -152,7 +152,7 @@ int main()
     cin>>r1>>s1>>p1;
     cin>>r2>>s2>>p2;
     ll mx=min(r1,s2)+min(s1,p2)+min(p1,r2);
-     ll mn=max(0ll,r1-r2-p2)+max(0ll,s1-r2-s2)+max(0ll,p1-p2-s2);
+     ll mn=max(max(0ll,r1-r2-p2),max(max(0ll,s1-r2-s2),max(0ll,p1-p2-s2)));
     cout<<mn<<" "<<mx<<endl;
 
 
