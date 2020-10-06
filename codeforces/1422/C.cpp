@@ -31,7 +31,7 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #else
 #define debug(x...)
 #endif
-#define endl '\n'
+
 #define ll long long
 #define f first
 #define s second
