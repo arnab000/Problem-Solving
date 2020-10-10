@@ -1,4 +1,20 @@
 {
+  "AC17290984": {
+    "contest_id": "hhkb2020",
+    "language": "C++ (GCC 9.2.1)",
+    "path": "atcoder/hhkb2020/A.cpp",
+    "platform": "AtCoder",
+    "problem_index": "A",
+    "problem_name": "Keyboard",
+    "problem_url": "https://atcoder.jp/contests/hhkb2020/tasks/hhkb2020_a",
+    "submission_id": "AC17290984",
+    "submission_url": "https://atcoder.jp/contests/hhkb2020/submissions/17290984",
+    "tags": [
+      "AtCoder",
+      "*100"
+    ],
+    "timestamp": "Oct/10/2020 18:03"
+  },
   "AC17296431": {
     "contest_id": "hhkb2020",
     "language": "C++ (GCC 9.2.1)",
