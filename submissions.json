@@ -1,4 +1,20 @@
 {
+  "AC17354819": {
+    "contest_id": "arc105",
+    "language": "C++ (GCC 9.2.1)",
+    "path": "atcoder/arc105/D.cpp",
+    "platform": "AtCoder",
+    "problem_index": "D",
+    "problem_name": "Let's Play Nim",
+    "problem_url": "https://atcoder.jp/contests/arc105/tasks/arc105_d",
+    "submission_id": "AC17354819",
+    "submission_url": "https://atcoder.jp/contests/arc105/submissions/17354819",
+    "tags": [
+      "AtCoder",
+      "*600"
+    ],
+    "timestamp": "Oct/11/2020 21:45"
+  },
   "AC17410559": {
     "contest_id": "hhkb2020",
     "language": "C++ (GCC 9.2.1)",
