@@ -1,4 +1,20 @@
 {
+  "AC17410559": {
+    "contest_id": "hhkb2020",
+    "language": "C++ (GCC 9.2.1)",
+    "path": "atcoder/hhkb2020/E.cpp",
+    "platform": "AtCoder",
+    "problem_index": "E",
+    "problem_name": "Lamps",
+    "problem_url": "https://atcoder.jp/contests/hhkb2020/tasks/hhkb2020_e",
+    "submission_id": "AC17410559",
+    "submission_url": "https://atcoder.jp/contests/hhkb2020/submissions/17410559",
+    "tags": [
+      "AtCoder",
+      "*500"
+    ],
+    "timestamp": "Oct/15/2020 19:45"
+  },
   "AC17438757": {
     "contest_id": "abc180",
     "language": "C++ (GCC 9.2.1)",
