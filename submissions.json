@@ -895,6 +895,25 @@
     ],
     "timestamp": "Jan/08/2021 23:01"
   },
+  "CF96697750": {
+    "contest_id": 1435,
+    "language": "GNU C++17",
+    "path": "codeforces/1435/C.cpp",
+    "problem_index": "C",
+    "problem_name": "Perform Easily",
+    "problem_url": "https://codeforces.com/contest/1435/problem/C",
+    "submission_id": "CF96697750",
+    "submission_url": "https://codeforces.com/contest/1435/submission/96697750",
+    "tags": [
+      "brute force",
+      "data structures",
+      "dp",
+      "sortings",
+      "two pointers",
+      "*1900"
+    ],
+    "timestamp": "Oct/25/2020 19:01"
+  },
   "CF96943958": {
     "contest_id": 1437,
     "language": "GNU C++17",
