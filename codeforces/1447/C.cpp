@@ -180,15 +180,17 @@ int main()
  {
      ll n,c;
      cin>>n>>c;
-     vector<pair<ll,ll>>sura;
+     vector<pair<ll,pair<ll,ll>>>sura;
      for(ll i=0;i<n;i++)
      {
          ll k;
          cin>>k;
 
-        
-          sura.push_back({k,i});
-         
+         if(k<=c)
+         {
+          ll x=c-k;
+          sura.push_back({x,{k,i}});
+         }
      }
      ll y=(c+1)/2;
      if(sura.empty())
@@ -197,20 +199,17 @@ int main()
          continue;
      }
      vector<ll>ans;
-     sort(sura.rbegin(),sura.rend());
+     sort(sura.begin(),sura.end());
      ll sum=0;
      for(ll i=0;i<sura.size();i++)
      {
-         if(sura[i].first<=c){
-         sum+=sura[i].first;
-         ans.push_back(sura[i].second+1);
-         }
+         sum+=sura[i].second.first;
          if(sum>=y)
          {
-             
+             ans.push_back(sura[i].second.second+1);
              break;
          }
-        
+          ans.push_back(sura[i].second.second+1);
 
      }
      if(sum>=y)
