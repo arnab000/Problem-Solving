@@ -431,10 +431,10 @@ int main()
             cin>>arr[i][j];
         }
     }
-     for(ll i=0;i<n-1;i+=1)
+     for(ll i=0;i<n-1;i+=2)
     {
        
-        for(ll j=0;j<m-1;j+=1)
+        for(ll j=0;j<m-1;j+=2)
         { ll cnt=0;
                for(ll k=i;k<=i+1;k++)
        {
@@ -472,117 +472,76 @@ int main()
 
  }
    
-//  ll i=n-2;
-//          for(ll j=0;j<m-1;j+=2)
-//         { ll cnt=0;
-//                for(ll k=i;k<=i+1;k++)
-//        {
-//            for(ll l=j;l<=j+1;l++)
-//            {
-//                if(arr[k][l]=='1')
-//                {
+ ll i=n-2;
+         for(ll j=0;j<m-1;j+=1)
+        { ll cnt=0;
+               for(ll k=i;k<=i+1;k++)
+       {
+           for(ll l=j;l<=j+1;l++)
+           {
+               if(arr[k][l]=='1')
+               {
                    
-//                    cnt++;
-//                }
-//            }
-//         }
+                   cnt++;
+               }
+           }
+        }
        
        
-//          if(cnt==1)
-//     {
-//         one(i,j);
-//     }
-//     else if(cnt==2)
-//     {
-//         two(i,j);
+         if(cnt==1)
+    {
+        one(i,j);
+    }
+    else if(cnt==2)
+    {
+        two(i,j);
 
-//     }
-//     else if(cnt==3)
-//     {
-//         three(i,j);
-//     }
-//     else if(cnt==4)
-//     {
-//         four(i,j);
+    }
+    else if(cnt==3)
+    {
+        three(i,j);
+    }
+    else if(cnt==4)
+    {
+        four(i,j);
         
-//     }
-//     }
+    }
+    }
       
-//     ll j=m-2;
-//         for(ll i=0;i<n-1;i+=2)
-//         { ll cnt=0;
-//                for(ll k=i;k<=i+1;k++)
-//        {
-//            for(ll l=j;l<=j+1;l++)
-//            {
-//                if(arr[k][l]=='1')
-//                {
+    ll j=m-2;
+        for(ll i=0;i<n-1;i+=1)
+        { ll cnt=0;
+               for(ll k=i;k<=i+1;k++)
+       {
+           for(ll l=j;l<=j+1;l++)
+           {
+               if(arr[k][l]=='1')
+               {
                    
-//                    cnt++;
-//                }
-//            }
-//         }
+                   cnt++;
+               }
+           }
+        }
        
-//          if(cnt==1)
-//     {
-//         one(i,j);
-//     }
-//     else if(cnt==2)
-//     {
-//         two(i,j);
+         if(cnt==1)
+    {
+        one(i,j);
+    }
+    else if(cnt==2)
+    {
+        two(i,j);
 
-//     }
-//     else if(cnt==3)
-//     {
-//         three(i,j);
-//     }
-//     else if(cnt==4)
-//     {
-//         four(i,j);
+    }
+    else if(cnt==3)
+    {
+        three(i,j);
+    }
+    else if(cnt==4)
+    {
+        four(i,j);
         
-//     }
-//     }
-//      i=n-2,j=m-2;
-//      ll cnt=0;
-//       for(ll k=i;k<=i+1;k++)
-//        {
-//            for(ll l=j;l<=j+1;l++)
-//            {
-//                if(arr[k][l]=='1')
-//                {
-                   
-//                    cnt++;
-//                }
-//            }
-//         }
-      
-//          if(cnt==1)
-//     {
-//         one(i,j);
-//     }
-//     else if(cnt==2)
-//     {
-//         two(i,j);
-
-//     }
-//     else if(cnt==3)
-//     {
-//         three(i,j);
-//     }
-//     else if(cnt==4)
-//     {
-//         four(i,j);
-        
-//     }
-    //  for(ll i=0;i<n;i++)
-    // {
-    //     for(ll j=0;j<m;j++)
-    //     {
-    //         cout<<arr[i][j];
-    //     }
-    //     cout<<endl;
-    // }
-
+    }
+    }
     if(!moves.empty()){
         cout<<moves.size()<<'\n';
 for(ll ami=0;ami<moves.size();ami++)
