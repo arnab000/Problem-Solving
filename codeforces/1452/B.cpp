@@ -192,26 +192,11 @@ int main()
          mx=max(sura[i],mx);
          
      }
-     ll ans;
-     ll l=mx,r=1000000000000;
-
-     while(r>=l)
-     {
-         ll mid=(l+r)/2;
-         ll x=(mid*(n-1))-sum;
-         if(x<0)
-         {
-             l=mid+1;
-         }else
-         {
-             r=mid-1;
-             ans=x;
-         }
-         
-
-     }
-     cout<<ans<<endl;
-
+     ll ans=0;
+     if(sum%(n-1)!=0)
+  ans=(n-1)-(sum%(n-1));
+  ans=max((mx*(n-1)-sum),ans);
+  cout<<ans<<endl;
 
 
 
