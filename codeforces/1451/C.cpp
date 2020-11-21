@@ -228,10 +228,10 @@ int main()
     }
 
     if(hbe)
-    cout<<"Yes"<<'\n';
+    cout<<"Yes"<<endl;
     else
     {
-        cout<<"No"<<'\n';
+        cout<<"No"<<endl;
     }
     
 
@@ -246,4 +246,4 @@ int main()
       
     
         
- 
+
