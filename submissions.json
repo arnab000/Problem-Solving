@@ -895,6 +895,23 @@
     ],
     "timestamp": "Jan/08/2021 23:01"
   },
+  "CF99208220": {
+    "contest_id": 787,
+    "language": "GNU C++17",
+    "path": "codeforces/787/B.cpp",
+    "problem_index": "B",
+    "problem_name": "Not Afraid",
+    "problem_url": "https://codeforces.com/contest/787/problem/B",
+    "submission_id": "CF99208220",
+    "submission_url": "https://codeforces.com/contest/787/submission/99208220",
+    "tags": [
+      "greedy",
+      "implementation",
+      "math",
+      "*1300"
+    ],
+    "timestamp": "Nov/22/2020 07:58"
+  },
   "CF99411790": {
     "contest_id": 1454,
     "language": "GNU C++17",
