@@ -2,7 +2,7 @@
 #pragma GCC optimization ("O3")
 #pragma GCC optimization ("unroll-loops")
 */
- 
+
 #include<bits/stdc++.h>
 using namespace std;
 void __print(int x) {cerr << x;}
@@ -18,7 +18,7 @@ void __print(char x) {cerr << '\'' << x << '\'';}
 void __print(const char *x) {cerr << '\"' << x << '\"';}
 void __print(const string &x) {cerr << '\"' << x << '\"';}
 void __print(bool x) {cerr << (x ? "true" : "false");}
- 
+
 template<typename T, typename V>
 void __print(const pair<T, V> &x) {cerr << '{'; __print(x.first); cerr << ','; __print(x.second); cerr << '}';}
 template<typename T>
@@ -31,7 +31,7 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #else
 #define debug(x...)
 #endif
- 
+
 #define ll long long
 #define f first
 #define s second
@@ -68,7 +68,7 @@ void prefix_function( string s,ll arr[] )
       arr[i]=border;
     }
 }//send mod-2 for a^-1 if mod is a prime number
- 
+
 ll mod=998244353;
 ll add( ll a , ll b)
 {
@@ -96,7 +96,7 @@ ll dv(ll a,ll b)
     ll inv=binpow(b,mod-2);
     return mul(a,inv);
 }
- 
+
 ll dsu_arr[100000];
 ll dsu_sz[100000];
 void dsu(ll n)
@@ -193,7 +193,7 @@ void SieveOfEratosthenes(int n)
        if (prime[p]) 
           primes.push_back(p);
 } 
- 
+
 int main()
 {
     Fast
@@ -215,42 +215,50 @@ int main()
          {
              t/=primes[i];
              //cout<<t<<endl;
- 
+
              cnt++;
           
- 
+
          }
          if(cnt>ans)
          {
              ans=cnt;
              l=primes[i];
          }
- 
+
          
      }
- 
+
      if(ans==0)
      {
-         cout<<1<<'\n';
-         cout<<n<<'\n';
+         cout<<1<<endl;
+         cout<<n<<endl;
          continue;
      }
      else
      {
-         cout<<ans<<'\n';
+         cout<<ans<<endl;
          ll r=1;
          for(ll i=0;i<ans-1;i++)
          {
              r*=l;
              cout<<l<<" ";
          }
-         cout<<(n/r)<<'\n';
- 
+         cout<<(n/r)<<endl;
+
      }
- 
- 
- 
+
+
+
  }
- 
- 
+
+
 }
+
+
+
+   
+      
+    
+        
+
