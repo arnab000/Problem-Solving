@@ -180,24 +180,55 @@ int main()
  {
      ll n,p,k;
      cin>>n>>p>>k;
-     string s;
-     cin>>s;
+     vector<char>sura;
+     vector<ll>dp;
+     p--;
+     for(ll i=0;i<n;i++)
+     {
+         dp.push_back(-1ll);
+     }
+     for(ll i=0;i<n;i++)
+     {
+        char d;
+         cin>>d;
+         sura.push_back(d);
+     }
      ll x,y;
      cin>>x>>y;
-     map<ll,ll>freq;
-     for(ll i=p;i<=n;i++)
+     for(ll start=p;start<n;start++)
      {
-         if(s[i-1]=='0')
-         freq[i%k]++;
+           for(ll i=start;;i+=k)
+           {
+                 if(i>=n)
+                {
+                    ll temp=0;
+                    while (i>start)
+                   {
+                       i-=k;
+                       if(i>=0 &&sura[i]=='0')
+                       temp++;
+                       dp[i]=temp;
+                   }
+                   break;
+
+                }
+               if(dp[i]!=-1)
+               {
+
+                   break;
+                   
+               }
+              
+           }
      }
-  ll ans=10000000000000000;
-  for(ll i=p;i<=n;i++)
-  {
-      ll mn=x*freq[i%k]+abs(p-i)*y;
-      ans=min(ans,mn);
-      if(s[i-1]=='0')
-      freq[i%k]--;
-  }
+     ll j=0;
+     ll ans=100000000000;
+     for(ll i=p;i<n;i++)
+     {
+         ll mn=j*y+dp[i]*x;
+         ans=min(ans,mn);
+         j++;
+     }
      cout<<ans<<endl;
 
  }
