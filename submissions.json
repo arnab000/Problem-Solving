@@ -895,6 +895,22 @@
     ],
     "timestamp": "Jan/08/2021 23:01"
   },
+  "CF99846402": {
+    "contest_id": 1457,
+    "language": "GNU C++17",
+    "path": "codeforces/1457/A.cpp",
+    "problem_index": "A",
+    "problem_name": "Prison Break",
+    "problem_url": "https://codeforces.com/contest/1457/problem/A",
+    "submission_id": "CF99846402",
+    "submission_url": "https://codeforces.com/contest/1457/submission/99846402",
+    "tags": [
+      "brute force",
+      "math",
+      "*800"
+    ],
+    "timestamp": "Nov/29/2020 13:16"
+  },
   "CF99858909": {
     "contest_id": 1457,
     "language": "GNU C++17",
