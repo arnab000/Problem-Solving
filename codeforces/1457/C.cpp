@@ -180,38 +180,36 @@ int main()
  {
      ll n,p,k;
      cin>>n>>p>>k;
-     vector<char>sura;
+     string sura;
      vector<ll>dp;
      p--;
-     for(ll i=0;i<n;i++)
+     for(ll i=0;i<=n;i++)
      {
          dp.push_back(-1ll);
      }
-     for(ll i=0;i<n;i++)
-     {
-        char d;
-         cin>>d;
-         sura.push_back(d);
-     }
+     cin>>sura;
      ll x,y;
      cin>>x>>y;
      for(ll start=p;start<n;start++)
      {
            for(ll i=start;;i+=k)
            {
-                 if(i>=n)
+                  if(i>=n)
                 {
+             
                     ll temp=0;
                     while (i>start)
                    {
                        i-=k;
                        if(i>=0 &&sura[i]=='0')
                        temp++;
+                           
                        dp[i]=temp;
                    }
                    break;
 
                 }
+               
                if(dp[i]!=-1)
                {
 
@@ -221,23 +219,26 @@ int main()
                        i-=k;
                        if(i>=0 && sura[i]=='0')
                        temp++;
+                       
                        dp[i]=temp;
                    }
                    break;
                    
                }
-              
+             
            }
      }
      ll j=0;
-     ll ans=100000000000;
+     ll ans=1000000000000000000;
      for(ll i=p;i<n;i++)
      {
+         if(dp[i]==-1)
+         continue;
          ll mn=j*y+dp[i]*x;
          ans=min(ans,mn);
          j++;
      }
-     cout<<ans<<endl;
+     cout<<max(ans,0ll)<<endl;
 
  }
 
