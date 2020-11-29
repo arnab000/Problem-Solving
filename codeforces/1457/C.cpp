@@ -215,6 +215,14 @@ int main()
                if(dp[i]!=-1)
                {
 
+                   ll temp=dp[i];
+                   while (i>start)
+                   {
+                       i-=k;
+                       if(i>=0 && sura[i]=='0')
+                       temp++;
+                       dp[i]=temp;
+                   }
                    break;
                    
                }
