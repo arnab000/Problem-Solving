@@ -1,4 +1,20 @@
 {
+  "CF101262032": {
+    "contest_id": 1462,
+    "language": "GNU C++17",
+    "path": "codeforces/1462/A.cpp",
+    "problem_index": "A",
+    "problem_name": "Favorite Sequence",
+    "problem_url": "https://codeforces.com/contest/1462/problem/A",
+    "submission_id": "CF101262032",
+    "submission_url": "https://codeforces.com/contest/1462/submission/101262032",
+    "tags": [
+      "implementation",
+      "two pointers",
+      "*800"
+    ],
+    "timestamp": "Dec/15/2020 20:39"
+  },
   "CF101279465": {
     "contest_id": 1462,
     "language": "GNU C++17",
