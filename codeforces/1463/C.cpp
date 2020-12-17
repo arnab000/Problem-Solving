@@ -1,38 +1,279 @@
+/*#pragma GCC target ("avx2")
+#pragma GCC optimization ("O3")
+#pragma GCC optimization ("unroll-loops")
+*/
+
 #include<bits/stdc++.h>
 using namespace std;
-const long long INF=10000000000000000;
-vector<pair<long long,long long>> v;
-long long t,n,p,x,y,c,l,r;
+void __print(int x) {cerr << x;}
+void __print(long x) {cerr << x;}
+void __print(long long x) {cerr << x;}
+void __print(unsigned x) {cerr << x;}
+void __print(unsigned long x) {cerr << x;}
+void __print(unsigned long long x) {cerr << x;}
+void __print(float x) {cerr << x;}
+void __print(double x) {cerr << x;}
+void __print(long double x) {cerr << x;}
+void __print(char x) {cerr << '\'' << x << '\'';}
+void __print(const char *x) {cerr << '\"' << x << '\"';}
+void __print(const string &x) {cerr << '\"' << x << '\"';}
+void __print(bool x) {cerr << (x ? "true" : "false");}
+
+template<typename T, typename V>
+void __print(const pair<T, V> &x) {cerr << '{'; __print(x.first); cerr << ','; __print(x.second); cerr << '}';}
+template<typename T>
+void __print(const T &x) {int f = 0; cerr << '{'; for (auto &i: x) cerr << (f++ ? "," : ""), __print(i); cerr << "}";}
+void _print() {cerr << "]\n";}
+template <typename T, typename... V>
+void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v...);}
+#ifndef ONLINE_JUDGE
+#define debug(x...) cerr << "[" << #x << "] = ["; _print(x)
+#else
+#define debug(x...)
+#endif
+
+#define ll long long
+#define f first
+#define s second
+#define Fast ios_base::sync_with_stdio(false);cin.tie(NULL);
+typedef pair<ll , pair<ll, ll> > pi;
+int pow(int x,int y){
+    int res=1;
+    while(y){
+        if(y&1) res*=x;
+        y>>=1;
+        x*=x;
+    }
+    return res;
+}   
+struct Compare {
+    constexpr bool operator()(pi const & a,
+                              pi const & b) const noexcept
+    { return a.first < b.first || (a.first == b.first && a.second.first > b.second.first); }
+ 
+};
+void prefix_function( string s,ll arr[] )
+{
+     long long border=0; arr[0]=0;
+    for(long long i=1;i<s.size();i++)
+    {
+      while(border>0 && s[i]!=s[border])
+        border=arr[border-1];
+     
+     if(s[i]==s[border])
+         border++;
+      else
+       border=0;
+      
+      arr[i]=border;
+    }
+}//send mod-2 for a^-1 if mod is a prime number
+
+ll mod=998244353;
+ll add( ll a , ll b)
+{
+    return (((a%mod)+(b%mod))%mod);
+}
+ll mul(ll a,ll b)
+{
+  return (((a%mod)*(b%mod))%mod);
+}
+ll binpow(ll a, ll b) {
+    ll res = 1;
+    while (b) {
+        if (b & 1) res = mul(res, a);
+        a = mul(a, a);
+        b >>= 1;
+    }
+    return res;
+}
+ll subs(ll a,ll b)
+{
+    return (((a%mod)-(b%mod)+mod)%mod);
+}
+ll dv(ll a,ll b)
+{
+    ll inv=binpow(b,mod-2);
+    return mul(a,inv);
+}
+
+ll dsu_arr[100000];
+ll dsu_sz[100000];
+void dsu(ll n)
+{
+    for(ll i=0;i<=n;i++)
+    {
+        dsu_arr[i]=i;
+        dsu_sz[i]=1;
+    }
+}
+ll find(ll x)
+{
+     ll root=x;
+    while (root!=dsu_arr[root])
+    {
+        root=dsu_arr[root];
+    }
+    while(x!=dsu_arr[x])
+    {
+        dsu_arr[x]=root;
+        x=dsu_arr[x];
+    }
+    return root;
+}
+ll merge(ll x,ll y)
+{
+    ll root1=find(x);
+    ll root2=find(y);
+    
+    if(root1==root2)
+    return 0ll;
+ 
+    if(dsu_sz[x]>dsu_sz[y]){
+    dsu_arr[root2]=root1;
+    dsu_sz[root1]+=dsu_sz[root2];
+    }
+    else
+    {
+         dsu_sz[root2]+=dsu_sz[root1];
+        dsu_arr[root1]=root2;
+    }
+    return 1ll;
+}
+/*
+vector<ll>adj[100005];
+bool vis[100005];
+ll dist[100005];
+void bfs(ll c)
+{
+  vis[c]=true;
+  dist[c]=0;
+  queue<ll>q;
+  q.push(c);
+while(!q.empty())
+{
+    ll x=q.front();
+    q.pop();
+   
+    for(ll i=0;i<adj[x].size();i++)
+    {
+        ll y=adj[x][i];
+        if(!vis[y])
+        {
+            vis[y]=true;
+            dist[y]=dist[x]+1;
+            
+            q.push(y);
+        }
+    }
+ 
+}
+}
+*/
+
 int main()
 {
-    ios_base::sync_with_stdio(false);
-    cin.tie(nullptr);
-    cin >> t;
-    while(t--){
-        cin >> n;
-        v.resize(n);
-        for(auto &it: v) cin >> it.first >> it.second;
-        v.push_back({INF,INF});
-        p=x=y=c=0;
-        for(long long i=0; i<n; i++){
-            if(v[i].first >= p + abs(x-y)){
-                x=y;
-                y=v[i].second;
-                p=v[i].first;
-            }
-            if(y>=x){
-                l = x + v[i].first - p;
-                r = l + v[i+1].first - v[i].first;
-                if(r>y) r=y;
-            }
-            else{
-                l = x - v[i].first + p;
-                r = l - v[i+1].first + v[i].first;
-                if(r<y) r=y;
-            }
-            if(v[i].second>=min(l,r) && v[i].second<=max(l,r)) c++;
-        }
-        cout << c << "\n";
-    }
-    return 0;
+    Fast
+ ll test;
+ cin>>test;
+ while(test--)
+ {
+     ll n;
+     cin>>n;
+     vector<pair<ll,ll>>sura;
+     for(ll i=0;i<n;i++)
+     {
+         ll u,v;
+         cin>>u>>v;
+         sura.push_back({u,v});
+     }
+     ll busy=0;
+     ll start=0;
+     ll en=0;
+     ll ans=0;
+     for(ll i=0;i<n;i++)
+     {
+         if(busy<=sura[i].first)
+         {
+             start=en;
+             en=sura[i].second;
+             busy=sura[i].first+abs(start-en);
+         }
+         if(i<n-1)
+         {
+             bool be=false;
+             bool ulta=false,shoja=false;
+             if(start>=en)
+             ulta=true;
+             else
+             shoja=true;
+             if(shoja)
+             {
+                 if(start<=sura[i].second && en>=sura[i].second)
+                 be=true;
+             }
+             if(ulta)
+             {
+                    if(start>=sura[i].second && en<=sura[i].second)
+                 be=true;
+             }
+             if(be)
+             {
+                 ll dis=abs(en-sura[i].second);
+                 ll pu=busy-dis;
+                 if(pu<=sura[i+1].first && pu>=sura[i].first)
+                 ans++;
+             }
+
+
+         }
+         if(i==n-1)
+         {
+             if(busy<=sura[i].first)
+             ans++;
+             else{
+                 bool be=false;
+             bool ulta=false,shoja=false;
+             if(start>=en)
+             ulta=true;
+             else
+             shoja=true;
+             if(shoja)
+             {
+                 if(start<=sura[i].second && en>=sura[i].second)
+                 be=true;
+             }
+             if(ulta)
+             {
+                    if(start>=sura[i].second && en<=sura[i].second)
+                 be=true;
+             }
+             if(be)
+             {
+                 ll dis=abs(en-sura[i].second);
+                 ll pu=busy-dis;
+                 if( pu>=sura[i].first)
+                 ans++;
+             }
+
+             }
+
+         }
+         //cout<<i<<" "<<ans<<endl;
+
+
+     }
+     cout<<ans<<endl;
+
+ }
+
+
 }
+
+
+
+   
+      
+    
+        
+
