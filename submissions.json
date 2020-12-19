@@ -1,4 +1,20 @@
 {
+  "AC18879153": {
+    "contest_id": "abc186",
+    "language": "C++ (GCC 9.2.1)",
+    "path": "atcoder/abc186/D.cpp",
+    "platform": "AtCoder",
+    "problem_index": "D",
+    "problem_name": "Sum of difference",
+    "problem_url": "https://atcoder.jp/contests/abc186/tasks/abc186_d",
+    "submission_id": "AC18879153",
+    "submission_url": "https://atcoder.jp/contests/abc186/submissions/18879153",
+    "tags": [
+      "AtCoder",
+      "*400"
+    ],
+    "timestamp": "Dec/19/2020 18:33"
+  },
   "AC18930958": {
     "contest_id": "dp",
     "language": "C++ (GCC 9.2.1)",
