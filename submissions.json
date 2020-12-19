@@ -1,4 +1,20 @@
 {
+  "CF101782606": {
+    "contest_id": 1459,
+    "language": "GNU C++14",
+    "path": "codeforces/1459/A.cpp",
+    "problem_index": "A",
+    "problem_name": "Red-Blue Shuffle",
+    "problem_url": "https://codeforces.com/contest/1459/problem/A",
+    "submission_id": "CF101782606",
+    "submission_url": "https://codeforces.com/contest/1459/submission/101782606",
+    "tags": [
+      "math",
+      "probabilities",
+      "*800"
+    ],
+    "timestamp": "Dec/19/2020 21:27"
+  },
   "CF101862632": {
     "contest_id": 1465,
     "language": "GNU C++14",
