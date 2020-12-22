@@ -1,4 +1,20 @@
 {
+  "AC18931998": {
+    "contest_id": "dp",
+    "language": "C++ (GCC 9.2.1)",
+    "path": "atcoder/dp/F.cpp",
+    "platform": "AtCoder",
+    "problem_index": "F",
+    "problem_name": "LCS",
+    "problem_url": "https://atcoder.jp/contests/dp/tasks/dp_f",
+    "submission_id": "AC18931998",
+    "submission_url": "https://atcoder.jp/contests/dp/submissions/18931998",
+    "tags": [
+      "AtCoder",
+      "*100"
+    ],
+    "timestamp": "Dec/22/2020 08:49"
+  },
   "AC18945162": {
     "contest_id": "dp",
     "language": "C++ (GCC 9.2.1)",
