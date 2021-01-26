@@ -172,7 +172,6 @@ while(!q.empty())
 */
 vector<ll>divisor[200005];
 ll cnt[200005];
-ll cnt2[200005];
 int main()
 {
     Fast
@@ -199,11 +198,8 @@ int main()
  {
      ll n;
      cin>>n;
-   for(ll i=0;i<=200005;i++)
-   {
-       cnt[i]=0ll;
-       cnt2[i]=0ll;
-   }
+     memset(cnt,200000,0);
+     map<ll,ll>cnt2;
      vector<ll>sura;
      
      for(ll i=0;i<n;i++)
@@ -236,7 +232,7 @@ int main()
        }
       
        cnt2[x]=dp[i];
-       // cout<<x<<" "<<cnt2[x]<<endl;
+        //cout<<x<<" "<<cnt2[x]<<endl;
        ans=max(ans,dp[i]);
 
      }
