@@ -176,11 +176,21 @@ ll cnt2[200005];
 int main()
 {
     Fast
-    for(ll i=1;i<200005;i++)
+    for(ll i=1;i<=200005;i++)
     {
-        for(ll j=i;j<200005;j+=i)
+        for(ll j=1;j*j<=i;j++)
         {
-           divisor[j].push_back(i);
+            if(i%j==0)
+            {
+                ll x=i/j;
+                if(x!=j)
+                {
+                    divisor[i].push_back(j);
+                    divisor[i].push_back(x);
+                }
+                else
+                divisor[i].push_back(x);
+            }
         }
     }
  ll test;
@@ -189,7 +199,7 @@ int main()
  {
      ll n;
      cin>>n;
-   for(ll i=0;i<200005;i++)
+   for(ll i=0;i<=200005;i++)
    {
        cnt[i]=0ll;
        cnt2[i]=0ll;
