@@ -2610,6 +2610,25 @@
     ],
     "timestamp": "Jan/19/2021 22:23"
   },
+  "CF106147146": {
+    "contest_id": 1476,
+    "language": "GNU C++17",
+    "path": "codeforces/1476/D.cpp",
+    "platform": "Codeforces",
+    "problem_index": "D",
+    "problem_name": "Journey",
+    "problem_url": "https://codeforces.com/contest/1476/problem/D",
+    "submission_id": "CF106147146",
+    "submission_url": "https://codeforces.com/contest/1476/submission/106147146",
+    "tags": [
+      "dfs and similar",
+      "dp",
+      "dsu",
+      "implementation",
+      "*1700"
+    ],
+    "timestamp": "Feb/01/2021 06:25"
+  },
   "CF106623370": {
     "contest_id": 1481,
     "language": "GNU C++17",
