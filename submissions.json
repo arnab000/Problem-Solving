@@ -1583,6 +1583,22 @@
     ],
     "timestamp": "Jan/18/2021 20:28"
   },
+  "AC19908481": {
+    "contest_id": "abc190",
+    "language": "C++ (GCC 9.2.1)",
+    "path": "atcoder/abc190/F.cpp",
+    "platform": "AtCoder",
+    "problem_index": "F",
+    "problem_name": "Shift and Inversions",
+    "problem_url": "https://atcoder.jp/contests/abc190/tasks/abc190_f",
+    "submission_id": "AC19908481",
+    "submission_url": "https://atcoder.jp/contests/abc190/submissions/19908481",
+    "tags": [
+      "AtCoder",
+      "*600"
+    ],
+    "timestamp": "Feb/04/2021 08:31"
+  },
   "AC19966302": {
     "contest_id": "abc191",
     "language": "C++ (GCC 9.2.1)",
