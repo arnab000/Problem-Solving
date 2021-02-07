@@ -37,7 +37,15 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #define s second
 #define Fast ios_base::sync_with_stdio(false);cin.tie(NULL);
 typedef pair<ll , pair<ll, ll> > pi;
- 
+int pow(int x,int y){
+    int res=1;
+    while(y){
+        if(y&1) res*=x;
+        y>>=1;
+        x*=x;
+    }
+    return res;
+}   
 struct Compare {
     constexpr bool operator()(pi const & a,
                               pi const & b) const noexcept
