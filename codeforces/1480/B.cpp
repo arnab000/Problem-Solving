@@ -204,7 +204,7 @@ ll x=0;
 //cout<<p<<endl;
      ll dam=sura[i]*p;
      ll dam2=sura[i]*(p-1);
-     mn=max(mn,dam-dam2-1);
+     mn=max(mn,dam-dam2);
     x+=dam;
 
  }
