@@ -1583,6 +1583,22 @@
     ],
     "timestamp": "Jan/18/2021 20:28"
   },
+  "AC20159328": {
+    "contest_id": "arc112",
+    "language": "C++ (GCC 9.2.1)",
+    "path": "atcoder/arc112/B.cpp",
+    "platform": "AtCoder",
+    "problem_index": "B",
+    "problem_name": "-- - B",
+    "problem_url": "https://atcoder.jp/contests/arc112/tasks/arc112_b",
+    "submission_id": "AC20159328",
+    "submission_url": "https://atcoder.jp/contests/arc112/submissions/20159328",
+    "tags": [
+      "AtCoder",
+      "*400"
+    ],
+    "timestamp": "Feb/13/2021 19:39"
+  },
   "AC20389185": {
     "contest_id": "arc113",
     "language": "C++ (GCC 9.2.1)",
