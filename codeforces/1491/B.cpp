@@ -170,16 +170,31 @@ while(!q.empty())
 }
 }
 */
+ll n;
+bool check (ll y,ll x)
+{
+ if(x==1000001 && y==n)
+ return false;
+ if(x==0 && y==1)
+ return false;
+ if(x<0 || x>1000001)
+ return false;
+ if(y<0 || y>n )
+ return false;
 
+ return true;
+
+
+}
 int main()
 {
     Fast
  ll test;
  cin>>test;
  while(test--)
- {ll n,u,v;
+ {ll u,v;
  cin>>n>>u>>v;
- ll cost=min(u,v);
+ ll cost=u;
  vector<ll>sura;
  set<ll>s;
  for(ll i=0;i<n;i++)
@@ -198,44 +213,81 @@ int main()
      if(abs(sura[i]-sura[i-1])>=2)
      {
          jail1=false;
+         cost=0;
          break;
      }
-     if(sura[i]==0)
-     break;
-    lagbe1++;
-  
+    
+}
+for(ll i=0;i<n;i++)
+{
+bool done=check(i+1,sura[i]+1);
+if(done)
+{
+    if(i==0)
+    {
+        ll p=abs(sura[i+1]-(sura[i]+1));
+    if(p>=2)
+    cost=min(cost,v);
 
 
- }
- bool jail2=true;
-ll lagbe2=1;
-  for(ll i=n-1;i>=0;i--)
- {
-       if(abs(sura[i]-sura[i+1])>=2)
-     {
-         jail2=false;
-         break;
-     }
-     if(sura[i]==1000001)
-     break;
+    }
+    else if(i==n-1)
+    {
+        ll q=abs(sura[i-1]-(sura[i]+1));
+        if(q>=2)
+    cost=min(cost,v);
+    }
+    else
+    {
+         ll p=abs(sura[i+1]-(sura[i]+1));
+    if(p>=2)
+    cost=min(cost,v);
+    ll q=abs(sura[i-1]-(sura[i]+1));
+        if(q>=2)
+    cost=min(cost,v);
 
-    lagbe2++;
+    }
+}
+done=check(i+1,sura[i]-1);
+if(done)
+{
+    if(i==0)
+    {
+        ll p=abs(sura[i+1]-(sura[i]-1));
+    if(p>=2)
+    cost=min(cost,v);
 
- }
+
+    }
+    else if(i==n-1)
+    {
+        ll q=abs(sura[i-1]-(sura[i]-1));
+        if(q>=2)
+    cost=min(cost,v);
+    }
+    else
+    {
+         ll p=abs(sura[i+1]-(sura[i]-1));
+    if(p>=2)
+    cost=min(cost,v);
+    ll q=abs(sura[i-1]-(sura[i]-1));
+        if(q>=2)
+    cost=min(cost,v);
+
+    }
+}
+
+}
+cost=min(cost,2*v);
+// cout<<lagbe1<<" "<<lagbe2<<endl;
  if(s.size()==1)
  {
      cout<<min(v+v,u+v)<<'\n';
      continue;
  }
- if(jail1 && jail2)
+ if(jail1 )
  {
-     if(lagbe1+lagbe2<=n)
-     cout<<2*cost<<'\n';
-     else
      cout<<cost<<'\n';
- }else if(jail1 || jail2)
- {
-      cout<<cost<<'\n';
  }
  else
  cout<<0<<'\n';
@@ -252,4 +304,4 @@ ll lagbe2=1;
       
     
         
- 
+
