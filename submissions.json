@@ -2610,6 +2610,22 @@
     ],
     "timestamp": "Jan/19/2021 22:23"
   },
+  "CF109849877": {
+    "contest_id": 1501,
+    "language": "GNU C++17",
+    "path": "codeforces/1501/A.cpp",
+    "platform": "Codeforces",
+    "problem_index": "A",
+    "problem_name": "Alexey and Train",
+    "problem_url": "https://codeforces.com/contest/1501/problem/A",
+    "submission_id": "CF109849877",
+    "submission_url": "https://codeforces.com/contest/1501/submission/109849877",
+    "tags": [
+      "implementation",
+      "*800"
+    ],
+    "timestamp": "Mar/13/2021 15:27"
+  },
   "CF109858880": {
     "contest_id": 1501,
     "language": "GNU C++17",
