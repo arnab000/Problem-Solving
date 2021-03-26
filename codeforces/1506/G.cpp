@@ -205,7 +205,21 @@ int main()
          if(taken[s[i]])
          continue;
          bool hbe=true;
-        
+         for(char a=s[i];a>='a';a--)
+         {
+             //cout<<a<<" "<<x<<endl;
+            // cout<<cnt[a]<<" "<<r<<endl;
+            if(r>cnt[a] && taken[x])
+            {
+                hbe=false;
+                break;
+            }
+
+
+         }
+       //  cout<<hbe<<endl;
+         if(hbe)
+         {
            while(!ans.empty())
            {
                ll u=ans.top();
@@ -219,9 +233,12 @@ int main()
            }
            ans.push(x);
            taken[x]=true;
-         
-         
-      
+         }
+         else
+         {
+             ans.push(x);
+             taken[x]=true;
+         }
         // cout<<ans.size()<<" "<<ans.top()<<endl;
      }
      string sura;
