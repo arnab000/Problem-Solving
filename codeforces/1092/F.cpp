@@ -203,7 +203,6 @@ for(ll i=0;i<adj[x].size();i++)
 
 int main()
 {
-    Fast
   ll n;
   cin>>n;
   vector<ll>sura;
@@ -225,7 +224,7 @@ dfs1(1,-1);
 //cout<<mx1<<endl;
 
 dfs(1,-1,mx1);
-cout<<mx1<<'\n';
+cout<<mx1<<endl;
 
 
 }
