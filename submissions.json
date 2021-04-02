@@ -2610,6 +2610,21 @@
     ],
     "timestamp": "Jan/19/2021 22:23"
   },
+  "CF111746886": {
+    "contest_id": 1505,
+    "language": "GNU C++17",
+    "path": "codeforces/1505/F.cpp",
+    "platform": "Codeforces",
+    "problem_index": "F",
+    "problem_name": "Math",
+    "problem_url": "https://codeforces.com/contest/1505/problem/F",
+    "submission_id": "CF111746886",
+    "submission_url": "https://codeforces.com/contest/1505/submission/111746886",
+    "tags": [
+      "math"
+    ],
+    "timestamp": "Apr/02/2021 07:06"
+  },
   "CF111747143": {
     "contest_id": 1505,
     "language": "GNU C++17",
