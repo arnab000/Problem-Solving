@@ -2610,6 +2610,24 @@
     ],
     "timestamp": "Jan/19/2021 22:23"
   },
+  "CF111847306": {
+    "contest_id": 1328,
+    "language": "GNU C++17",
+    "path": "codeforces/1328/E.cpp",
+    "platform": "Codeforces",
+    "problem_index": "E",
+    "problem_name": "Tree Queries",
+    "problem_url": "https://codeforces.com/contest/1328/problem/E",
+    "submission_id": "CF111847306",
+    "submission_url": "https://codeforces.com/contest/1328/submission/111847306",
+    "tags": [
+      "dfs and similar",
+      "graphs",
+      "trees",
+      "*1900"
+    ],
+    "timestamp": "Apr/03/2021 15:03"
+  },
   "CF111888486": {
     "contest_id": 1504,
     "language": "GNU C++17",
