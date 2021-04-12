@@ -208,7 +208,11 @@ int main()
          if(sura[i]==ans)
          cnt++;
      }
-   
+     if(cnt<=1)
+     {
+         cout<<0<<'\n';
+         continue;
+     }
      ll x=mul(cnt,cnt-1);
      ll y=mul(fact[n-2],x);
      cout<<y<<'\n';
