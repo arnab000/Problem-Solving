@@ -6,13 +6,13 @@ Submissions
 
 A repository to keep track of problem solving practice, containing solutions from platforms:
 * Codeforces &nbsp; [![Codeforces](https://run.kaist.ac.kr/badges/codeforces/Bojack_human.svg)](https://codeforces.com/profile/Bojack_human)
-* AtCoder &nbsp; [![AtCoder](https://run.kaist.ac.kr/badges/atcoder/bojack_human.svg)](https://atcoder.jp/users/bojack_human)
 
 
 ## Contents
 
 | # | Title | Solution | Tags | Submitted |
 |---| ----- | -------- | ---- | --------- |
+904 | [B - AND 0, Sum Big](https://codeforces.com/contest/1514/problem/B) | [GNU C++17](./codeforces/1514/B.cpp) | `bitmasks` `combinatorics` `math` | Apr/19/2021 19:46 | 
 903 | [C - Array Destruction](https://codeforces.com/contest/1474/problem/C) | [GNU C++17](./codeforces/1474/C.cpp) | `brute force` `constructive algorithms` `data structures` `greedy` `implementation` `sortings` `*1700` | Jan/19/2021 22:23 | 
 902 | [B - Different Divisors](https://codeforces.com/contest/1474/problem/B) | [GNU C++17](./codeforces/1474/B.cpp) | `binary search` `constructive algorithms` `greedy` `math` `number theory` `*1000` | Jan/19/2021 21:07 | 
 901 | [A - Puzzle From the Future](https://codeforces.com/contest/1474/problem/A) | [GNU C++17](./codeforces/1474/A.cpp) | `greedy` `*800` | Jan/19/2021 20:47 | 
